@@ -8,13 +8,11 @@ def read_file_to_list(file_path):
             lines = file.readlines()
         # Strip newline characters from each line
         lines = [line.strip() for line in lines]
-        return lines
+        return lines, None
     except FileNotFoundError:
-        print("The file was not found.")
-        return []
+        return [], "The file was not found."
     except Exception as e:
-        print(f"An error occurred: {e}")
-        return []
+        return [], e
 
 if __name__ == "__main__":
     # Check if the file path is provided as a command-line argument
