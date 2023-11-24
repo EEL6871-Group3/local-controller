@@ -8,7 +8,7 @@ from job_reader import read_file_to_list
 app = Flask(__name__)
 
 sample_rate = 15 # The closed loop system will sleep for this much of X seconds
-reference_input = 80 # CPU usage, from 0 to 100
+reference_input = 0.8 # CPU usage, from 0 to 100
 job_sleep_time = 15 # read a job every X seconds
 job_file_name = "job_list.txt"
 cpu_res_file_name = "local-controller/cpu.txt"
@@ -18,9 +18,9 @@ node_name = "k8s-master"
 cur_pod_id = 0
 
 # API
-cpu_api = "http://localhost:5000/cpu"
-pod_num_api = "http://localhost:5000/pod-num" # GET
-create_pod_api = "http://localhost:5000/pod" # POST
+cpu_api = "http://localhost:5001/cpu"
+pod_num_api = "http://localhost:5001/pod-num" # GET
+create_pod_api = "http://localhost:5001/pod" # POST
 
 # k values
 kp = 2
@@ -42,7 +42,7 @@ class pi_controller:
         ui = round(self.ui_prev + self.ki * e)
         self.ui_prev = ui # TODO: should this ui_prev be rounded to an integer? (max_pod should)
         u = self.kp * e + ui
-        return u
+        return round(u)
 
 def get_cpu():
     """ get the current CPU usage
@@ -51,7 +51,7 @@ def get_cpu():
         response = requests.get(cpu_api)
         if response.status_code == 200:
             cpu_data = response.json()
-            return cpu_data[node_name], None
+            return cpu_data[node_name]/100, None
         else:
             return None, f"Error: {response.status_code}"
     except Exception as e:
@@ -74,11 +74,11 @@ def get_pod_num():
 def run_job(job_des):
     """create a new pod with the job description
     return success, msg
-    curl -X POST -H "Content-Type: application/json" -d '{"job":"stress-ng --io 2 --timeout 1m"}' http://localhost:5000/pod
+    curl -X POST -H "Content-Type: application/json" -d '{"job":"stress-ng --io 2 --timeout 1m", "name": "test"}' http://localhost:5000/pod
     """
     try:
         global cur_pod_id
-        payload = {"job": job_des, "name": cur_pod_id}
+        payload = {"job": job_des, "name": cur_pod_id, "node": node_name}
         cur_pod_id += 1
         response = requests.post(create_pod_api, json=payload)
         if response.status_code == 200:
@@ -163,7 +163,7 @@ def save_cpu_max_pod():
 def handle_post():
     """
     add a new job
-    curl -X POST -H "Content-Type: application/json" -d '{"job":"haha 123"}' http://localhost:5002/job
+    curl -X POST -H "Content-Type: application/json" -d '{"job":"stress-ng --io 1 --vm 8 --vm-bytes 1G --timeout 30s"}' http://localhost:5002/job
     """
     global job_list
     # Parse JSON payload
