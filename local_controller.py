@@ -7,20 +7,20 @@ from job_reader import read_file_to_list
 
 app = Flask(__name__)
 
-
-
 sample_rate = 15 # The closed loop system will sleep for this much of X seconds
 reference_input = 80 # CPU usage, from 0 to 100
 job_sleep_time = 15 # read a job every X seconds
-job_file_name = "local-controller/test_jobs.txt"
+job_file_name = "job_list.txt"
 cpu_res_file_name = "local-controller/cpu.txt"
 max_pod_res_file_name = "local-controller/maxpod.txt"
 job_list = []
+node_name = "k8s-master"
+cur_pod_id = 0
 
 # API
-cpu_api = "http://localhost:5001/cpu"
-pod_num_api = "http://localhost:5001/pod-num" # GET
-create_pod_api = "http://localhost:5001/pod" # POST
+cpu_api = "http://localhost:5000/cpu"
+pod_num_api = "http://localhost:5000/pod-num" # GET
+create_pod_api = "http://localhost:5000/pod" # POST
 
 # k values
 kp = 2
@@ -51,7 +51,7 @@ def get_cpu():
         response = requests.get(cpu_api)
         if response.status_code == 200:
             cpu_data = response.json()
-            return cpu_data['cpu_usage'], None
+            return cpu_data[node_name], None
         else:
             return None, f"Error: {response.status_code}"
     except Exception as e:
@@ -59,9 +59,10 @@ def get_cpu():
     
 def get_pod_num():
     """get the current pod number
+    curl -X POST http://localhost:5000/pod-num
     """
     try:
-        response = requests.get(pod_num_api)
+        response = requests.post(pod_num_api)
         if response.status_code == 200:
             res = response.json()
             return res['pod_num'], None
@@ -73,9 +74,12 @@ def get_pod_num():
 def run_job(job_des):
     """create a new pod with the job description
     return success, msg
+    curl -X POST -H "Content-Type: application/json" -d '{"job":"stress-ng --io 2 --timeout 1m"}' http://localhost:5000/pod
     """
     try:
-        payload = {"job": job_des}
+        global cur_pod_id
+        payload = {"job": job_des, "name": cur_pod_id}
+        cur_pod_id += 1
         response = requests.post(create_pod_api, json=payload)
         if response.status_code == 200:
             res = response.json()
@@ -125,6 +129,7 @@ def render_jobs():
             else:
                 logging.info("job scheduled")
             job_list = job_list[1:]
+            logging.debug(f"job_list: {job_list}")
 
         time.sleep(job_sleep_time)
     logging.info("job finished")
@@ -218,7 +223,9 @@ if __name__ == "__main__":
         logging.critical(f"error getting the job list: {error}")
         logging.critical("shutting down")
         exit(0)
+
     logging.info("getting job list sucess, start rendering jobs")
+
     job_render_thread = threading.Thread(target=render_jobs)
     job_render_thread.daemon = True
     job_render_thread.start()
@@ -227,4 +234,4 @@ if __name__ == "__main__":
     save_res_thread.daemon = True
     save_res_thread.start()
 
-    app.run(debug=True, port=5002)
+    app.run(port=5004)
