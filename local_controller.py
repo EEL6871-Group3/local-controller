@@ -7,7 +7,7 @@ from job_reader import read_file_to_list
 
 app = Flask(__name__)
 
-sample_rate = 15 # The closed loop system will sleep for this much of X seconds
+sample_rate = 60 # The closed loop system will sleep for this much of X seconds
 reference_input = 0.8 # CPU usage, from 0 to 100
 job_sleep_time = 15 # read a job every X seconds
 job_file_name = "job_list.txt"
@@ -17,14 +17,21 @@ job_list = []
 node_name = "k8s-master"
 cur_pod_id = 0
 
+max_pod_upperbound = 8
+
 # API
 cpu_api = "http://localhost:5001/cpu"
 pod_num_api = "http://localhost:5001/pod-num" # GET
 create_pod_api = "http://localhost:5001/pod" # POST
 
 # k values
-kp = 2
-ki = 3
+kp = -3.127
+ki = 3.1406
+
+# k values for pid
+pid_kp=-1.3852
+pid_ki=3.0588
+pid_kd=0.9610
 
 max_pod = 5 # control input. Share variable, set by the closed loop, read by job assignment
 CPU_data = []
@@ -43,6 +50,22 @@ class pi_controller:
         self.ui_prev = ui # TODO: should this ui_prev be rounded to an integer? (max_pod should)
         u = self.kp * e + ui
         return round(u)
+
+class pid_controller:
+    def __init__(self, kp, ki, kd):
+        self.kp = kp
+        self.ki = ki
+        self.kd = kd
+        self.e_prev = 0
+        self.ui_prev = 0
+
+    def compute_u(self, e):
+        ui = round(self.ui_prev + self.ki * e)
+        self.ui_prev = ui
+        ud = self.kd * (e - self.e_prev)
+        self.e_prev = e
+        u = round(self.kp * e + ui + ud)
+        return u
 
 def get_cpu():
     """ get the current CPU usage
@@ -103,8 +126,11 @@ def closed_loop(controller):
         CPU_data.append(cur_cpu)
         e = reference_input - cur_cpu
         max_pod = controller.compute_u(e)
-        if max_pod < 0:
-            max_pod = 0
+        if max_pod < 1:
+            max_pod = 1
+        if max_pod >= max_pod_upperbound:
+            max_pod = max_pod_upperbound
+            logging.info(f"maxpod hitting maxpod {max_pod_upperbound}")
         max_pod_data.append(max_pod)
         logging.info(f"setting max_pod: {max_pod}")
         time.sleep(sample_rate)
@@ -129,7 +155,6 @@ def render_jobs():
             else:
                 logging.info("job scheduled")
             job_list = job_list[1:]
-            logging.debug(f"job_list: {job_list}")
 
         time.sleep(job_sleep_time)
     logging.info("job finished")
@@ -199,6 +224,11 @@ def handle_post_json():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
+    # Set the logging level for 'urllib3.connectionpool' to WARNING or higher
+    logging.getLogger("urllib3.connectionpool").setLevel(logging.WARNING)
+
+
+
     # Log the configurations
     logging.debug(f"Sample Rate: {sample_rate} seconds")
     logging.debug(f"Reference Input (CPU Usage): {reference_input}%")
@@ -212,6 +242,7 @@ if __name__ == "__main__":
 
     # start a thread to read the CPU usage and update max_pod
     controller = pi_controller(kp, ki)
+    # controller = pid_controller(pid_kp, pid_ki, pid_kd)
     closed_loop_thread = threading.Thread(target=closed_loop, args=(controller,))
     closed_loop_thread.daemon = True
     closed_loop_thread.start()
@@ -224,8 +255,10 @@ if __name__ == "__main__":
         logging.critical("shutting down")
         exit(0)
 
-    logging.info("getting job list sucess, start rendering jobs")
 
+    # let the closed loop start first
+    time.sleep(5)
+    logging.info("getting job list sucess, start rendering jobs")
     job_render_thread = threading.Thread(target=render_jobs)
     job_render_thread.daemon = True
     job_render_thread.start()
