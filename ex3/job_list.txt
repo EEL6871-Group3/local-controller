@@ -1,0 +1,80 @@
+stress-ng --io 4 --vm 4 --vm-bytes 4G --timeout 210s
+stress-ng --io 5 --vm 5 --vm-bytes 2G --timeout 180s
+stress-ng --io 8 --vm 3 --vm-bytes 4G --timeout 186s
+stress-ng --io 6 --vm 6 --vm-bytes 1G --timeout 209s
+stress-ng --io 6 --vm 8 --vm-bytes 4G --timeout 205s
+stress-ng --io 6 --vm 5 --vm-bytes 2G --timeout 207s
+stress-ng --io 7 --vm 5 --vm-bytes 2G --timeout 184s
+stress-ng --io 6 --vm 5 --vm-bytes 2G --timeout 201s
+stress-ng --io 6 --vm 6 --vm-bytes 4G --timeout 198s
+stress-ng --io 7 --vm 6 --vm-bytes 4G --timeout 199s
+stress-ng --io 3 --vm 7 --vm-bytes 4G --timeout 184s
+stress-ng --io 4 --vm 8 --vm-bytes 1G --timeout 200s
+stress-ng --io 5 --vm 4 --vm-bytes 3G --timeout 197s
+stress-ng --io 3 --vm 7 --vm-bytes 1G --timeout 193s
+stress-ng --io 6 --vm 6 --vm-bytes 1G --timeout 202s
+stress-ng --io 6 --vm 6 --vm-bytes 3G --timeout 191s
+stress-ng --io 6 --vm 3 --vm-bytes 2G --timeout 201s
+stress-ng --io 5 --vm 8 --vm-bytes 2G --timeout 200s
+stress-ng --io 4 --vm 4 --vm-bytes 2G --timeout 203s
+stress-ng --io 7 --vm 5 --vm-bytes 4G --timeout 185s
+stress-ng --io 7 --vm 3 --vm-bytes 3G --timeout 193s
+stress-ng --io 3 --vm 7 --vm-bytes 2G --timeout 207s
+stress-ng --io 7 --vm 3 --vm-bytes 1G --timeout 199s
+stress-ng --io 7 --vm 4 --vm-bytes 2G --timeout 189s
+stress-ng --io 4 --vm 4 --vm-bytes 1G --timeout 180s
+stress-ng --io 3 --vm 5 --vm-bytes 3G --timeout 196s
+stress-ng --io 5 --vm 4 --vm-bytes 4G --timeout 203s
+stress-ng --io 3 --vm 7 --vm-bytes 1G --timeout 196s
+stress-ng --io 8 --vm 8 --vm-bytes 3G --timeout 193s
+stress-ng --io 4 --vm 5 --vm-bytes 4G --timeout 203s
+stress-ng --io 6 --vm 8 --vm-bytes 4G --timeout 205s
+stress-ng --io 6 --vm 5 --vm-bytes 3G --timeout 183s
+stress-ng --io 6 --vm 7 --vm-bytes 4G --timeout 207s
+stress-ng --io 7 --vm 8 --vm-bytes 2G --timeout 199s
+stress-ng --io 7 --vm 8 --vm-bytes 4G --timeout 187s
+stress-ng --io 7 --vm 6 --vm-bytes 1G --timeout 194s
+stress-ng --io 8 --vm 4 --vm-bytes 1G --timeout 207s
+stress-ng --io 4 --vm 7 --vm-bytes 4G --timeout 187s
+stress-ng --io 3 --vm 5 --vm-bytes 3G --timeout 199s
+stress-ng --io 4 --vm 7 --vm-bytes 3G --timeout 197s
+stress-ng --io 3 --vm 3 --vm-bytes 4G --timeout 197s
+stress-ng --vm 2 --vm-bytes 4G --timeout 191s
+stress-ng --io 3 --vm 2 --vm-bytes 2G --timeout 197s
+stress-ng --vm 3 --vm-bytes 1G --timeout 205s
+stress-ng --io 2 --vm 2 --vm-bytes 3G --timeout 186s
+stress-ng --vm 2 --vm-bytes 3G --timeout 180s
+stress-ng --io 1 --vm 1 --vm-bytes 2G --timeout 202s
+stress-ng --io 1 --vm 3 --vm-bytes 1G --timeout 182s
+stress-ng --vm 1 --vm-bytes 4G --timeout 181s
+stress-ng --io 3 --vm 1 --vm-bytes 4G --timeout 198s
+stress-ng --io 3 --vm 1 --vm-bytes 3G --timeout 193s
+stress-ng --io 2 --vm 1 --vm-bytes 3G --timeout 207s
+stress-ng --io 2 --vm 2 --vm-bytes 2G --timeout 208s
+stress-ng --io 2 --vm 2 --vm-bytes 1G --timeout 187s
+stress-ng --io 1 --vm 2 --vm-bytes 4G --timeout 203s
+stress-ng --io 2 --vm 3 --vm-bytes 2G --timeout 190s
+stress-ng --io 1 --vm 1 --vm-bytes 4G --timeout 188s
+stress-ng --io 3 --vm 3 --vm-bytes 3G --timeout 204s
+stress-ng --io 1 --vm 3 --vm-bytes 2G --timeout 193s
+stress-ng --vm 3 --vm-bytes 2G --timeout 193s
+stress-ng --io 2 --timeout 208s
+stress-ng --io 3 --vm 2 --vm-bytes 3G --timeout 184s
+stress-ng --io 1 --vm 1 --vm-bytes 1G --timeout 195s
+stress-ng --io 3 --vm 3 --vm-bytes 3G --timeout 186s
+stress-ng --io 3 --vm 3 --vm-bytes 1G --timeout 207s
+stress-ng --io 2 --vm 2 --vm-bytes 2G --timeout 192s
+stress-ng --io 1 --vm 1 --vm-bytes 3G --timeout 203s
+stress-ng --vm 1 --vm-bytes 1G --timeout 190s
+stress-ng --io 3 --vm 1 --vm-bytes 1G --timeout 204s
+stress-ng --io 1 --vm 3 --vm-bytes 1G --timeout 188s
+stress-ng --vm 1 --vm-bytes 3G --timeout 182s
+stress-ng --io 2 --vm 2 --vm-bytes 4G --timeout 199s
+stress-ng --io 3 --vm 2 --vm-bytes 1G --timeout 187s
+stress-ng --io 2 --vm 3 --vm-bytes 3G --timeout 205s
+stress-ng --io 1 --vm 2 --vm-bytes 4G --timeout 207s
+stress-ng --io 3 --vm 1 --vm-bytes 4G --timeout 195s
+stress-ng --io 3 --vm 3 --vm-bytes 2G --timeout 182s
+stress-ng --vm 1 --vm-bytes 2G --timeout 181s
+stress-ng --io 2 --vm 1 --vm-bytes 3G --timeout 182s
+stress-ng --io 1 --vm 1 --vm-bytes 2G --timeout 187s

@@ -1,405 +1,628 @@
 nohup: ignoring input
-2023-11-27 12:21:02,737 - root - DEBUG - Sample Rate: 60 seconds
-2023-11-27 12:21:02,737 - root - DEBUG - Reference Input (CPU Usage): 0.8%
-2023-11-27 12:21:02,737 - root - DEBUG - Job Sleep Time: 15 seconds
-2023-11-27 12:21:02,737 - root - DEBUG - Job File Name: job_list.txt
-2023-11-27 12:21:02,737 - root - DEBUG - CPU API Endpoint: http://localhost:5001/cpu
-2023-11-27 12:21:02,737 - root - DEBUG - Pod Number API Endpoint: http://localhost:5001/pod-num
-2023-11-27 12:21:02,737 - root - DEBUG - Create Pod API Endpoint: http://localhost:5001/pod
-2023-11-27 12:21:02,737 - root - DEBUG - Maximum Number of Pods: 5
-2023-11-27 12:21:02,738 - root - INFO - start close loop
-2023-11-27 12:21:02,738 - root - INFO - getting job list from job_list.txt
-2023-11-27 12:21:03,101 - root - INFO - current CPU: 0.0147256355
-2023-11-27 12:21:03,101 - root - INFO - setting max_pod: 1
-2023-11-27 12:21:07,744 - root - INFO - getting job list sucess, start rendering jobs
-2023-11-27 12:21:07,747 - root - INFO - save CPU and max_pod data
+2023-11-27 17:08:54,265 - root - DEBUG - Sample Rate: 60 seconds
+2023-11-27 17:08:54,265 - root - DEBUG - Reference Input (CPU Usage): 0.8%
+2023-11-27 17:08:54,265 - root - DEBUG - Job Sleep Time: 15 seconds
+2023-11-27 17:08:54,265 - root - DEBUG - Job File Name: job_list.txt
+2023-11-27 17:08:54,265 - root - DEBUG - CPU API Endpoint: http://localhost:5001/cpu
+2023-11-27 17:08:54,265 - root - DEBUG - Pod Number API Endpoint: http://localhost:5001/pod-num
+2023-11-27 17:08:54,265 - root - DEBUG - Create Pod API Endpoint: http://localhost:5001/pod
+2023-11-27 17:08:54,265 - root - DEBUG - Maximum Number of Pods: 5
+2023-11-27 17:08:54,266 - root - INFO - start close loop
+2023-11-27 17:08:54,267 - root - INFO - getting job list from job_list.txt
+2023-11-27 17:08:54,619 - root - INFO - current CPU: 0.0156063618125
+2023-11-27 17:08:54,619 - root - INFO - setting max_pod: 1
+2023-11-27 17:08:59,272 - root - INFO - getting job list sucess, start rendering jobs
+2023-11-27 17:08:59,276 - root - INFO - save CPU and max_pod data
+2023-11-27 17:08:59,277 - root - DEBUG - [0.0156063618125]
+2023-11-27 17:08:59,277 - root - DEBUG - [1]
  * Serving Flask app 'local_controller'
  * Debug mode: off
-2023-11-27 12:21:07,752 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2023-11-27 17:08:59,280 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5004
-2023-11-27 12:21:07,752 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
-2023-11-27 12:21:07,822 - root - INFO - scheduling job stress-ng --io 5 --vm 5 --vm-bytes 2G --timeout 126s
-2023-11-27 12:21:07,884 - root - INFO - job scheduled
-2023-11-27 12:21:22,968 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
-2023-11-27 12:21:38,063 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
-2023-11-27 12:21:53,197 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
-2023-11-27 12:22:03,538 - root - INFO - current CPU: 0.331980681125
-2023-11-27 12:22:03,538 - root - INFO - setting max_pod: 2
-2023-11-27 12:22:07,808 - root - INFO - save CPU and max_pod data
-2023-11-27 12:22:08,282 - root - INFO - scheduling job stress-ng --io 1 --vm 4 --vm-bytes 3G --timeout 147s
-2023-11-27 12:22:08,333 - root - INFO - job scheduled
-2023-11-27 12:22:23,439 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:22:38,555 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:22:53,785 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:23:04,092 - root - INFO - current CPU: 0.5816392625625
-2023-11-27 12:23:04,093 - root - INFO - setting max_pod: 3
-2023-11-27 12:23:07,868 - root - INFO - save CPU and max_pod data
-2023-11-27 12:23:08,945 - root - INFO - scheduling job stress-ng --io 1 --vm 4 --vm-bytes 1G --timeout 140s
-2023-11-27 12:23:09,018 - root - INFO - job scheduled
-2023-11-27 12:23:24,304 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 1G --timeout 128s
-2023-11-27 12:23:24,358 - root - INFO - job scheduled
-2023-11-27 12:23:39,488 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:23:54,618 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:24:04,594 - root - INFO - current CPU: 0.6467696978125
-2023-11-27 12:24:04,594 - root - INFO - setting max_pod: 4
-2023-11-27 12:24:07,928 - root - INFO - save CPU and max_pod data
-2023-11-27 12:24:09,751 - root - INFO - scheduling job stress-ng --io 2 --vm 3 --vm-bytes 4G --timeout 126s
-2023-11-27 12:24:09,810 - root - INFO - job scheduled
-2023-11-27 12:24:25,038 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:24:40,285 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:24:55,455 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 2G --timeout 132s
-2023-11-27 12:24:55,559 - root - INFO - job scheduled
-2023-11-27 12:25:05,141 - root - INFO - current CPU: 0.648493347875
-2023-11-27 12:25:05,141 - root - INFO - setting max_pod: 4
-2023-11-27 12:25:07,988 - root - INFO - save CPU and max_pod data
-2023-11-27 12:25:10,699 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:25:25,832 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:25:41,034 - root - INFO - scheduling job stress-ng --io 4 --vm 1 --vm-bytes 2G --timeout 137s
-2023-11-27 12:25:41,104 - root - INFO - job scheduled
-2023-11-27 12:25:56,206 - root - INFO - scheduling job stress-ng --vm 2 --vm-bytes 2G --timeout 122s
-2023-11-27 12:25:56,264 - root - INFO - job scheduled
-2023-11-27 12:26:05,631 - root - INFO - current CPU: 0.437611918
-2023-11-27 12:26:05,632 - root - INFO - setting max_pod: 4
-2023-11-27 12:26:08,048 - root - INFO - save CPU and max_pod data
-2023-11-27 12:26:11,409 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:26:26,597 - root - INFO - scheduling job stress-ng --io 2 --vm 3 --vm-bytes 3G --timeout 142s
-2023-11-27 12:26:26,651 - root - INFO - job scheduled
-2023-11-27 12:26:41,810 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:26:56,957 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:27:06,132 - root - INFO - current CPU: 0.58715402225
-2023-11-27 12:27:06,132 - root - INFO - setting max_pod: 5
-2023-11-27 12:27:08,108 - root - INFO - save CPU and max_pod data
-2023-11-27 12:27:12,229 - root - INFO - scheduling job stress-ng --io 1 --vm 3 --vm-bytes 3G --timeout 127s
-2023-11-27 12:27:12,310 - root - INFO - job scheduled
-2023-11-27 12:27:27,454 - root - INFO - scheduling job stress-ng --io 3 --vm 1 --vm-bytes 3G --timeout 130s
-2023-11-27 12:27:27,590 - root - INFO - job scheduled
-2023-11-27 12:27:42,740 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
-2023-11-27 12:27:57,917 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
-2023-11-27 12:28:06,588 - root - INFO - current CPU: 0.65052681275
-2023-11-27 12:28:06,588 - root - INFO - setting max_pod: 6
-2023-11-27 12:28:08,168 - root - INFO - save CPU and max_pod data
-2023-11-27 12:28:13,335 - root - INFO - scheduling job stress-ng --io 1 --vm 2 --vm-bytes 3G --timeout 135s
-2023-11-27 12:28:13,390 - root - INFO - job scheduled
-2023-11-27 12:28:28,526 - root - INFO - scheduling job stress-ng --io 2 --vm 1 --vm-bytes 3G --timeout 125s
-2023-11-27 12:28:28,595 - root - INFO - job scheduled
-2023-11-27 12:28:43,753 - root - INFO - scheduling job stress-ng --io 1 --vm 5 --vm-bytes 2G --timeout 127s
-2023-11-27 12:28:43,818 - root - INFO - job scheduled
-2023-11-27 12:28:59,170 - root - INFO - scheduling job stress-ng --io 1 --vm 5 --vm-bytes 2G --timeout 122s
-2023-11-27 12:28:59,236 - root - INFO - job scheduled
-2023-11-27 12:29:07,571 - root - INFO - current CPU: 0.7645960877499999
-2023-11-27 12:29:07,571 - root - INFO - setting max_pod: 6
-2023-11-27 12:29:08,228 - root - INFO - save CPU and max_pod data
-2023-11-27 12:29:14,430 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:29:29,597 - root - INFO - scheduling job stress-ng --io 3 --vm 5 --vm-bytes 3G --timeout 125s
-2023-11-27 12:29:29,675 - root - INFO - job scheduled
-2023-11-27 12:29:44,903 - root - INFO - scheduling job stress-ng --io 4 --vm 2 --vm-bytes 2G --timeout 138s
-2023-11-27 12:29:44,993 - root - INFO - job scheduled
-2023-11-27 12:30:00,199 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:30:08,292 - root - INFO - save CPU and max_pod data
-2023-11-27 12:30:08,527 - root - INFO - current CPU: 0.9998134420625
-2023-11-27 12:30:08,528 - root - INFO - setting max_pod: 6
-2023-11-27 12:30:15,373 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:30:30,546 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:30:45,938 - root - INFO - scheduling job stress-ng --io 1 --vm 3 --vm-bytes 1G --timeout 135s
-2023-11-27 12:30:46,023 - root - INFO - job scheduled
-2023-11-27 12:31:01,226 - root - INFO - scheduling job stress-ng --io 2 --vm 4 --vm-bytes 2G --timeout 128s
-2023-11-27 12:31:01,290 - root - INFO - job scheduled
-2023-11-27 12:31:08,352 - root - INFO - save CPU and max_pod data
-2023-11-27 12:31:09,174 - root - INFO - current CPU: 0.9945822356875
-2023-11-27 12:31:09,175 - root - INFO - setting max_pod: 5
-2023-11-27 12:31:16,592 - root - INFO - scheduling job stress-ng --io 3 --vm 4 --vm-bytes 3G --timeout 145s
-2023-11-27 12:31:16,691 - root - INFO - job scheduled
-2023-11-27 12:31:31,905 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
-2023-11-27 12:31:47,133 - root - INFO - scheduling job stress-ng --vm 2 --vm-bytes 3G --timeout 140s
-2023-11-27 12:31:47,210 - root - INFO - job scheduled
-2023-11-27 12:32:02,384 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
-2023-11-27 12:32:08,412 - root - INFO - save CPU and max_pod data
-2023-11-27 12:32:09,704 - root - INFO - current CPU: 0.8566348353125
-2023-11-27 12:32:09,705 - root - INFO - setting max_pod: 4
-2023-11-27 12:32:17,615 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:32:32,761 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:32:47,899 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:33:03,048 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:33:08,472 - root - INFO - save CPU and max_pod data
-2023-11-27 12:33:10,191 - root - INFO - current CPU: 0.8379194298125
-2023-11-27 12:33:10,191 - root - INFO - setting max_pod: 4
-2023-11-27 12:33:18,248 - root - INFO - scheduling job stress-ng --io 2 --vm 1 --vm-bytes 2G --timeout 140s
-2023-11-27 12:33:18,302 - root - INFO - job scheduled
-2023-11-27 12:33:33,433 - root - INFO - scheduling job stress-ng --io 5 --vm 5 --vm-bytes 4G --timeout 136s
-2023-11-27 12:33:33,490 - root - INFO - job scheduled
-2023-11-27 12:33:48,850 - root - INFO - scheduling job stress-ng --vm 2 --vm-bytes 4G --timeout 140s
-2023-11-27 12:33:48,904 - root - INFO - job scheduled
-2023-11-27 12:34:04,041 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:34:08,532 - root - INFO - save CPU and max_pod data
-2023-11-27 12:34:10,784 - root - INFO - current CPU: 0.7050452781250001
-2023-11-27 12:34:10,785 - root - INFO - setting max_pod: 4
-2023-11-27 12:34:19,226 - root - INFO - scheduling job stress-ng --vm 1 --vm-bytes 3G --timeout 145s
-2023-11-27 12:34:19,286 - root - INFO - job scheduled
-2023-11-27 12:34:34,412 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:34:49,543 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:35:04,686 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:35:08,592 - root - INFO - save CPU and max_pod data
-2023-11-27 12:35:11,252 - root - INFO - current CPU: 0.58203902825
-2023-11-27 12:35:11,252 - root - INFO - setting max_pod: 4
-2023-11-27 12:35:19,821 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:35:34,958 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:35:50,144 - root - INFO - scheduling job stress-ng --io 3 --vm 5 --vm-bytes 1G --timeout 128s
-2023-11-27 12:35:50,208 - root - INFO - job scheduled
-2023-11-27 12:36:05,451 - root - INFO - scheduling job stress-ng --vm 4 --vm-bytes 3G --timeout 137s
-2023-11-27 12:36:05,501 - root - INFO - job scheduled
-2023-11-27 12:36:08,652 - root - INFO - save CPU and max_pod data
-2023-11-27 12:36:11,731 - root - INFO - current CPU: 0.535408579625
-2023-11-27 12:36:11,731 - root - INFO - setting max_pod: 5
-2023-11-27 12:36:20,676 - root - INFO - scheduling job stress-ng --io 4 --vm 3 --vm-bytes 1G --timeout 131s
-2023-11-27 12:36:20,735 - root - INFO - job scheduled
-2023-11-27 12:36:35,864 - root - INFO - scheduling job stress-ng --io 5 --vm 4 --vm-bytes 3G --timeout 123s
-2023-11-27 12:36:35,963 - root - INFO - job scheduled
-2023-11-27 12:36:51,192 - root - INFO - scheduling job stress-ng --io 2 --vm 1 --vm-bytes 4G --timeout 145s
-2023-11-27 12:36:51,289 - root - INFO - job scheduled
-2023-11-27 12:37:06,507 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
-2023-11-27 12:37:08,712 - root - INFO - save CPU and max_pod data
-2023-11-27 12:37:12,782 - root - INFO - current CPU: 0.9982842649375
-2023-11-27 12:37:12,782 - root - INFO - setting max_pod: 6
-2023-11-27 12:37:21,701 - root - INFO - scheduling job stress-ng --io 7 --vm 6 --vm-bytes 1G --timeout 74s
-2023-11-27 12:37:21,765 - root - INFO - job scheduled
-2023-11-27 12:37:36,990 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:37:52,192 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
-2023-11-27 12:38:07,441 - root - INFO - scheduling job stress-ng --io 7 --vm 4 --vm-bytes 1G --timeout 120s
-2023-11-27 12:38:07,527 - root - INFO - job scheduled
-2023-11-27 12:38:08,772 - root - INFO - save CPU and max_pod data
-2023-11-27 12:38:13,761 - root - INFO - current CPU: 0.9998258099375
-2023-11-27 12:38:13,761 - root - INFO - setting max_pod: 5
-2023-11-27 12:38:22,728 - root - INFO - current pod num: 6, max pod num: 5, job not scheduled
-2023-11-27 12:38:37,960 - root - INFO - scheduling job stress-ng --io 6 --vm 8 --vm-bytes 2G --timeout 114s
-2023-11-27 12:38:38,030 - root - INFO - job scheduled
-2023-11-27 12:38:53,311 - root - INFO - scheduling job stress-ng --io 5 --vm 6 --vm-bytes 1G --timeout 77s
-2023-11-27 12:38:53,405 - root - INFO - job scheduled
-2023-11-27 12:39:08,577 - root - INFO - scheduling job stress-ng --io 8 --vm 8 --vm-bytes 1G --timeout 81s
-2023-11-27 12:39:08,654 - root - INFO - job scheduled
-2023-11-27 12:39:08,832 - root - INFO - save CPU and max_pod data
-2023-11-27 12:39:14,704 - root - INFO - current CPU: 0.957683132875
-2023-11-27 12:39:14,704 - root - INFO - setting max_pod: 4
-2023-11-27 12:39:23,875 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:39:39,026 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:39:54,163 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:40:08,892 - root - INFO - save CPU and max_pod data
-2023-11-27 12:40:09,323 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
-2023-11-27 12:40:15,628 - root - INFO - current CPU: 0.999502116
-2023-11-27 12:40:15,628 - root - INFO - setting max_pod: 4
-2023-11-27 12:40:24,547 - root - INFO - scheduling job stress-ng --io 5 --vm 4 --vm-bytes 3G --timeout 86s
-2023-11-27 12:40:24,628 - root - INFO - job scheduled
-2023-11-27 12:40:40,000 - root - INFO - scheduling job stress-ng --io 7 --vm 4 --vm-bytes 2G --timeout 95s
-2023-11-27 12:40:40,061 - root - INFO - job scheduled
-2023-11-27 12:40:55,188 - root - INFO - scheduling job stress-ng --io 5 --vm 5 --vm-bytes 1G --timeout 61s
-2023-11-27 12:40:55,258 - root - INFO - job scheduled
-2023-11-27 12:41:08,952 - root - INFO - save CPU and max_pod data
-2023-11-27 12:41:10,396 - root - INFO - scheduling job stress-ng --io 7 --vm 5 --vm-bytes 3G --timeout 68s
-2023-11-27 12:41:10,467 - root - INFO - job scheduled
-2023-11-27 12:41:16,527 - root - INFO - current CPU: 0.7270577105
-2023-11-27 12:41:16,527 - root - INFO - setting max_pod: 3
-2023-11-27 12:41:25,651 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
-2023-11-27 12:41:40,822 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
-2023-11-27 12:41:55,966 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
-2023-11-27 12:42:09,012 - root - INFO - save CPU and max_pod data
-2023-11-27 12:42:11,183 - root - INFO - scheduling job stress-ng --io 4 --vm 5 --vm-bytes 2G --timeout 93s
-2023-11-27 12:42:11,253 - root - INFO - job scheduled
-2023-11-27 12:42:17,135 - root - INFO - current CPU: 0.742021409
-2023-11-27 12:42:17,135 - root - INFO - setting max_pod: 3
-2023-11-27 12:42:26,456 - root - INFO - scheduling job stress-ng --io 8 --vm 5 --vm-bytes 1G --timeout 94s
-2023-11-27 12:42:26,512 - root - INFO - job scheduled
-2023-11-27 12:42:41,623 - root - INFO - scheduling job stress-ng --io 4 --vm 7 --vm-bytes 3G --timeout 72s
-2023-11-27 12:42:41,680 - root - INFO - job scheduled
-2023-11-27 12:42:56,829 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:43:09,072 - root - INFO - save CPU and max_pod data
-2023-11-27 12:43:11,989 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:43:17,949 - root - INFO - current CPU: 0.99945224575
-2023-11-27 12:43:17,949 - root - INFO - setting max_pod: 3
-2023-11-27 12:43:27,142 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:43:42,293 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:43:57,474 - root - INFO - scheduling job stress-ng --io 6 --vm 4 --vm-bytes 1G --timeout 89s
-2023-11-27 12:43:57,577 - root - INFO - job scheduled
-2023-11-27 12:44:09,132 - root - INFO - save CPU and max_pod data
-2023-11-27 12:44:12,927 - root - INFO - scheduling job stress-ng --io 5 --vm 7 --vm-bytes 4G --timeout 117s
-2023-11-27 12:44:12,981 - root - INFO - job scheduled
-2023-11-27 12:44:18,459 - root - INFO - current CPU: 0.48517117831249995
-2023-11-27 12:44:18,459 - root - INFO - setting max_pod: 2
-2023-11-27 12:44:28,131 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:44:43,263 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:44:58,382 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:45:09,192 - root - INFO - save CPU and max_pod data
-2023-11-27 12:45:13,503 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:45:18,922 - root - INFO - current CPU: 0.710760880375
-2023-11-27 12:45:18,923 - root - INFO - setting max_pod: 3
-2023-11-27 12:45:28,674 - root - INFO - scheduling job stress-ng --io 8 --vm 5 --vm-bytes 3G --timeout 78s
-2023-11-27 12:45:28,795 - root - INFO - job scheduled
-2023-11-27 12:45:44,110 - root - INFO - scheduling job stress-ng --io 7 --vm 4 --vm-bytes 1G --timeout 98s
-2023-11-27 12:45:44,182 - root - INFO - job scheduled
-2023-11-27 12:45:59,338 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:46:09,252 - root - INFO - save CPU and max_pod data
-2023-11-27 12:46:14,479 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:46:19,403 - root - INFO - current CPU: 0.99927849925
-2023-11-27 12:46:19,403 - root - INFO - setting max_pod: 3
-2023-11-27 12:46:29,639 - root - INFO - scheduling job stress-ng --io 6 --vm 8 --vm-bytes 1G --timeout 98s
-2023-11-27 12:46:29,706 - root - INFO - job scheduled
-2023-11-27 12:46:44,871 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:47:00,185 - root - INFO - scheduling job stress-ng --io 5 --vm 6 --vm-bytes 4G --timeout 79s
-2023-11-27 12:47:00,304 - root - INFO - job scheduled
-2023-11-27 12:47:09,312 - root - INFO - save CPU and max_pod data
-2023-11-27 12:47:15,523 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:47:20,631 - root - INFO - current CPU: 0.877402649125
-2023-11-27 12:47:20,631 - root - INFO - setting max_pod: 2
-2023-11-27 12:47:30,820 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:47:45,936 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:48:01,076 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:48:09,372 - root - INFO - save CPU and max_pod data
-2023-11-27 12:48:16,208 - root - INFO - scheduling job stress-ng --io 3 --vm 8 --vm-bytes 1G --timeout 68s
-2023-11-27 12:48:16,264 - root - INFO - job scheduled
-2023-11-27 12:48:21,179 - root - INFO - current CPU: 0.907093081125
-2023-11-27 12:48:21,179 - root - INFO - setting max_pod: 2
-2023-11-27 12:48:31,498 - root - INFO - scheduling job stress-ng --io 6 --vm 6 --vm-bytes 2G --timeout 118s
-2023-11-27 12:48:31,546 - root - INFO - job scheduled
-2023-11-27 12:48:46,733 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:49:01,905 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:49:09,432 - root - INFO - save CPU and max_pod data
-2023-11-27 12:49:17,023 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:49:21,769 - root - INFO - current CPU: 0.900754642
-2023-11-27 12:49:21,770 - root - INFO - setting max_pod: 2
-2023-11-27 12:49:32,169 - root - INFO - scheduling job stress-ng --io 5 --vm 3 --vm-bytes 2G --timeout 102s
-2023-11-27 12:49:32,235 - root - INFO - job scheduled
-2023-11-27 12:49:47,347 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:50:02,450 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:50:09,492 - root - INFO - save CPU and max_pod data
-2023-11-27 12:50:17,558 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:50:22,202 - root - INFO - current CPU: 0.581043409
-2023-11-27 12:50:22,202 - root - INFO - setting max_pod: 2
-2023-11-27 12:50:32,663 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:50:47,799 - root - INFO - scheduling job stress-ng --io 5 --vm 7 --vm-bytes 3G --timeout 98s
-2023-11-27 12:50:47,877 - root - INFO - job scheduled
-2023-11-27 12:51:03,012 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:51:09,552 - root - INFO - save CPU and max_pod data
-2023-11-27 12:51:18,167 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
-2023-11-27 12:51:22,653 - root - INFO - current CPU: 0.64329814775
-2023-11-27 12:51:22,653 - root - INFO - setting max_pod: 3
-2023-11-27 12:51:33,314 - root - INFO - scheduling job stress-ng --io 4 --vm 7 --vm-bytes 3G --timeout 98s
-2023-11-27 12:51:33,377 - root - INFO - job scheduled
-2023-11-27 12:51:48,501 - root - INFO - scheduling job stress-ng --io 3 --vm 5 --vm-bytes 1G --timeout 83s
-2023-11-27 12:51:48,565 - root - INFO - job scheduled
-2023-11-27 12:52:03,752 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:52:09,612 - root - INFO - save CPU and max_pod data
-2023-11-27 12:52:18,913 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:52:23,534 - root - INFO - current CPU: 1e-09
-2023-11-27 12:52:23,534 - root - INFO - setting max_pod: 3
-2023-11-27 12:52:34,195 - root - INFO - scheduling job stress-ng --io 8 --vm 8 --vm-bytes 1G --timeout 64s
-2023-11-27 12:52:34,397 - root - INFO - job scheduled
-2023-11-27 12:52:49,541 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:53:04,779 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
-2023-11-27 12:53:09,672 - root - INFO - save CPU and max_pod data
-2023-11-27 12:53:20,009 - root - INFO - scheduling job stress-ng --io 7 --vm 4 --vm-bytes 3G --timeout 114s
-2023-11-27 12:53:20,074 - root - INFO - job scheduled
-2023-11-27 12:53:24,038 - root - INFO - current CPU: 0.9991308234375
-2023-11-27 12:53:24,038 - root - INFO - setting max_pod: 6
-2023-11-27 12:53:35,186 - root - INFO - scheduling job stress-ng --io 8 --vm 3 --vm-bytes 3G --timeout 110s
-2023-11-27 12:53:35,240 - root - INFO - job scheduled
-2023-11-27 12:53:50,603 - root - INFO - scheduling job stress-ng --io 4 --vm 5 --vm-bytes 4G --timeout 100s
-2023-11-27 12:53:50,752 - root - INFO - job scheduled
-2023-11-27 12:54:05,904 - root - INFO - scheduling job stress-ng --io 8 --vm 8 --vm-bytes 3G --timeout 104s
-2023-11-27 12:54:05,967 - root - INFO - job scheduled
-2023-11-27 12:54:09,732 - root - INFO - save CPU and max_pod data
-2023-11-27 12:54:21,626 - root - INFO - scheduling job stress-ng --io 8 --vm 5 --vm-bytes 1G --timeout 60s
-2023-11-27 12:54:21,746 - root - INFO - job scheduled
-2023-11-27 12:54:26,102 - root - INFO - current CPU: 0.78007855225
-2023-11-27 12:54:26,102 - root - INFO - setting max_pod: 5
-2023-11-27 12:54:36,760 - root - INFO - job finished
-2023-11-27 12:55:09,792 - root - INFO - save CPU and max_pod data
-2023-11-27 12:55:26,618 - root - INFO - current CPU: 0.7767741614374999
-2023-11-27 12:55:26,618 - root - INFO - setting max_pod: 5
-2023-11-27 12:56:09,803 - root - INFO - save CPU and max_pod data
-2023-11-27 12:56:26,998 - root - INFO - current CPU: 0.011954468625
-2023-11-27 12:56:26,998 - root - INFO - setting max_pod: 5
-2023-11-27 12:57:09,805 - root - INFO - save CPU and max_pod data
-2023-11-27 12:57:27,409 - root - INFO - current CPU: 0.013144150375000002
-2023-11-27 12:57:27,409 - root - INFO - setting max_pod: 7
-2023-11-27 12:58:09,864 - root - INFO - save CPU and max_pod data
-2023-11-27 12:58:27,762 - root - INFO - current CPU: 0.012051039687499997
-2023-11-27 12:58:27,762 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 12:58:27,762 - root - INFO - setting max_pod: 8
-2023-11-27 12:59:09,898 - root - INFO - save CPU and max_pod data
-2023-11-27 12:59:28,097 - root - INFO - current CPU: 0.0132409985625
-2023-11-27 12:59:28,097 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 12:59:28,097 - root - INFO - setting max_pod: 8
-2023-11-27 13:00:09,959 - root - INFO - save CPU and max_pod data
-2023-11-27 13:00:28,527 - root - INFO - current CPU: 0.012126262375
-2023-11-27 13:00:28,527 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:00:28,527 - root - INFO - setting max_pod: 8
-2023-11-27 13:01:10,020 - root - INFO - save CPU and max_pod data
-2023-11-27 13:01:28,901 - root - INFO - current CPU: 0.012818918749999998
-2023-11-27 13:01:28,901 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:01:28,901 - root - INFO - setting max_pod: 8
-2023-11-27 13:02:10,070 - root - INFO - save CPU and max_pod data
-2023-11-27 13:02:29,276 - root - INFO - current CPU: 0.012547878374999998
-2023-11-27 13:02:29,276 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:02:29,276 - root - INFO - setting max_pod: 8
-2023-11-27 13:03:10,128 - root - INFO - save CPU and max_pod data
-2023-11-27 13:03:29,769 - root - INFO - current CPU: 0.01314612325
-2023-11-27 13:03:29,770 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:03:29,770 - root - INFO - setting max_pod: 8
-2023-11-27 13:04:10,153 - root - INFO - save CPU and max_pod data
-2023-11-27 13:04:30,124 - root - INFO - current CPU: 0.013126491625
-2023-11-27 13:04:30,124 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:04:30,124 - root - INFO - setting max_pod: 8
-2023-11-27 13:05:10,214 - root - INFO - save CPU and max_pod data
-2023-11-27 13:05:30,503 - root - INFO - current CPU: 0.0133959638125
-2023-11-27 13:05:30,503 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:05:30,503 - root - INFO - setting max_pod: 8
-2023-11-27 13:06:10,232 - root - INFO - save CPU and max_pod data
-2023-11-27 13:06:30,854 - root - INFO - current CPU: 0.0114348215
-2023-11-27 13:06:30,854 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:06:30,854 - root - INFO - setting max_pod: 8
-2023-11-27 13:07:10,293 - root - INFO - save CPU and max_pod data
-2023-11-27 13:07:31,192 - root - INFO - current CPU: 0.0133750994375
-2023-11-27 13:07:31,192 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:07:31,192 - root - INFO - setting max_pod: 8
-2023-11-27 13:08:10,335 - root - INFO - save CPU and max_pod data
-2023-11-27 13:08:31,517 - root - INFO - current CPU: 0.012278783
-2023-11-27 13:08:31,517 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:08:31,517 - root - INFO - setting max_pod: 8
-2023-11-27 13:09:10,396 - root - INFO - save CPU and max_pod data
-2023-11-27 13:09:31,867 - root - INFO - current CPU: 0.014441240749999999
-2023-11-27 13:09:31,868 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:09:31,868 - root - INFO - setting max_pod: 8
-2023-11-27 13:10:10,428 - root - INFO - save CPU and max_pod data
-2023-11-27 13:10:32,207 - root - INFO - current CPU: 0.012677736875000001
-2023-11-27 13:10:32,207 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:10:32,207 - root - INFO - setting max_pod: 8
-2023-11-27 13:11:10,483 - root - INFO - save CPU and max_pod data
-2023-11-27 13:11:32,524 - root - INFO - current CPU: 0.0128268866875
-2023-11-27 13:11:32,525 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:11:32,525 - root - INFO - setting max_pod: 8
-2023-11-27 13:12:10,544 - root - INFO - save CPU and max_pod data
-2023-11-27 13:12:32,852 - root - INFO - current CPU: 0.0125994035625
-2023-11-27 13:12:32,852 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:12:32,852 - root - INFO - setting max_pod: 8
-2023-11-27 13:13:10,604 - root - INFO - save CPU and max_pod data
-2023-11-27 13:13:33,204 - root - INFO - current CPU: 0.0128988965
-2023-11-27 13:13:33,205 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:13:33,205 - root - INFO - setting max_pod: 8
-2023-11-27 13:14:10,665 - root - INFO - save CPU and max_pod data
-2023-11-27 13:14:33,542 - root - INFO - current CPU: 0.0127025951875
-2023-11-27 13:14:33,542 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:14:33,542 - root - INFO - setting max_pod: 8
-2023-11-27 13:15:10,680 - root - INFO - save CPU and max_pod data
-2023-11-27 13:15:33,936 - root - INFO - current CPU: 0.013821219000000001
-2023-11-27 13:15:33,936 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:15:33,937 - root - INFO - setting max_pod: 8
-2023-11-27 13:16:10,741 - root - INFO - save CPU and max_pod data
-2023-11-27 13:16:34,320 - root - INFO - current CPU: 0.012031420875
-2023-11-27 13:16:34,320 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:16:34,320 - root - INFO - setting max_pod: 8
-2023-11-27 13:17:10,764 - root - INFO - save CPU and max_pod data
-2023-11-27 13:17:34,662 - root - INFO - current CPU: 0.0139165009375
-2023-11-27 13:17:34,662 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:17:34,662 - root - INFO - setting max_pod: 8
-2023-11-27 13:18:10,825 - root - INFO - save CPU and max_pod data
-2023-11-27 13:18:35,044 - root - INFO - current CPU: 0.013819844875
-2023-11-27 13:18:35,044 - root - INFO - maxpod hitting maxpod 8
-2023-11-27 13:18:35,044 - root - INFO - setting max_pod: 8
+2023-11-27 17:08:59,280 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-11-27 17:08:59,574 - root - INFO - scheduling job stress-ng --io 4 --vm 4 --vm-bytes 4G --timeout 210s
+2023-11-27 17:08:59,625 - root - INFO - job scheduled
+2023-11-27 17:09:14,752 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:09:29,844 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:09:44,970 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:09:55,016 - root - INFO - current CPU: 0.27693301525
+2023-11-27 17:09:55,016 - root - INFO - setting max_pod: 2
+2023-11-27 17:09:59,336 - root - INFO - save CPU and max_pod data
+2023-11-27 17:09:59,336 - root - DEBUG - [0.0156063618125, 0.27693301525]
+2023-11-27 17:09:59,336 - root - DEBUG - [1, 2]
+2023-11-27 17:10:00,092 - root - INFO - scheduling job stress-ng --io 5 --vm 5 --vm-bytes 2G --timeout 180s
+2023-11-27 17:10:00,155 - root - INFO - job scheduled
+2023-11-27 17:10:15,263 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:10:30,377 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:10:45,501 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:10:55,481 - root - INFO - current CPU: 0.5768330344375
+2023-11-27 17:10:55,481 - root - INFO - setting max_pod: 4
+2023-11-27 17:10:59,396 - root - INFO - save CPU and max_pod data
+2023-11-27 17:10:59,396 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375]
+2023-11-27 17:10:59,396 - root - DEBUG - [1, 2, 4]
+2023-11-27 17:11:00,618 - root - INFO - scheduling job stress-ng --io 8 --vm 3 --vm-bytes 4G --timeout 186s
+2023-11-27 17:11:00,727 - root - INFO - job scheduled
+2023-11-27 17:11:15,870 - root - INFO - scheduling job stress-ng --io 6 --vm 6 --vm-bytes 1G --timeout 209s
+2023-11-27 17:11:15,939 - root - INFO - job scheduled
+2023-11-27 17:11:31,117 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:11:46,273 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:11:56,405 - root - INFO - current CPU: 0.9998259745
+2023-11-27 17:11:56,406 - root - INFO - setting max_pod: 5
+2023-11-27 17:11:59,456 - root - INFO - save CPU and max_pod data
+2023-11-27 17:11:59,456 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745]
+2023-11-27 17:11:59,456 - root - DEBUG - [1, 2, 4, 5]
+2023-11-27 17:12:01,444 - root - INFO - scheduling job stress-ng --io 6 --vm 8 --vm-bytes 4G --timeout 205s
+2023-11-27 17:12:01,516 - root - INFO - job scheduled
+2023-11-27 17:12:16,680 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:12:32,128 - root - INFO - scheduling job stress-ng --io 6 --vm 5 --vm-bytes 2G --timeout 207s
+2023-11-27 17:12:32,360 - root - INFO - job scheduled
+2023-11-27 17:12:47,792 - root - INFO - scheduling job stress-ng --io 7 --vm 5 --vm-bytes 2G --timeout 184s
+2023-11-27 17:12:47,924 - root - INFO - job scheduled
+2023-11-27 17:12:59,079 - root - INFO - current CPU: 0.9998767744375
+2023-11-27 17:12:59,088 - root - INFO - setting max_pod: 4
+2023-11-27 17:12:59,524 - root - INFO - save CPU and max_pod data
+2023-11-27 17:12:59,524 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375]
+2023-11-27 17:12:59,524 - root - DEBUG - [1, 2, 4, 5, 4]
+2023-11-27 17:13:03,201 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:13:18,514 - root - INFO - scheduling job stress-ng --io 6 --vm 5 --vm-bytes 2G --timeout 201s
+2023-11-27 17:13:18,666 - root - INFO - job scheduled
+2023-11-27 17:13:33,833 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:13:49,011 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:13:59,596 - root - INFO - save CPU and max_pod data
+2023-11-27 17:13:59,596 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375]
+2023-11-27 17:13:59,596 - root - DEBUG - [1, 2, 4, 5, 4]
+2023-11-27 17:14:00,075 - root - INFO - current CPU: 0.9997771063125
+2023-11-27 17:14:00,076 - root - INFO - setting max_pod: 3
+2023-11-27 17:14:04,183 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:14:19,342 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:14:34,533 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:14:49,679 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:14:59,656 - root - INFO - save CPU and max_pod data
+2023-11-27 17:14:59,656 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125]
+2023-11-27 17:14:59,656 - root - DEBUG - [1, 2, 4, 5, 4, 3]
+2023-11-27 17:15:00,770 - root - INFO - current CPU: 0.9881153865000001
+2023-11-27 17:15:00,770 - root - INFO - setting max_pod: 2
+2023-11-27 17:15:04,868 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:15:19,990 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:15:35,125 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:15:50,300 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:15:59,716 - root - INFO - save CPU and max_pod data
+2023-11-27 17:15:59,716 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001]
+2023-11-27 17:15:59,716 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2]
+2023-11-27 17:16:01,299 - root - INFO - current CPU: 0.9607889496875
+2023-11-27 17:16:01,300 - root - INFO - setting max_pod: 1
+2023-11-27 17:16:05,565 - root - INFO - current pod num: 2, max pod num: 1, job not scheduled
+2023-11-27 17:16:20,746 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:16:35,848 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:16:50,967 - root - INFO - scheduling job stress-ng --io 6 --vm 6 --vm-bytes 4G --timeout 198s
+2023-11-27 17:16:51,021 - root - INFO - job scheduled
+2023-11-27 17:16:59,776 - root - INFO - save CPU and max_pod data
+2023-11-27 17:16:59,776 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875]
+2023-11-27 17:16:59,780 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1]
+2023-11-27 17:17:01,803 - root - INFO - current CPU: 0.20480654462499998
+2023-11-27 17:17:01,803 - root - INFO - setting max_pod: 1
+2023-11-27 17:17:06,128 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:17:21,210 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:17:36,314 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:17:51,429 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:17:59,809 - root - INFO - save CPU and max_pod data
+2023-11-27 17:17:59,810 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998]
+2023-11-27 17:17:59,810 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1]
+2023-11-27 17:18:02,218 - root - INFO - current CPU: 0.3901811035
+2023-11-27 17:18:02,218 - root - INFO - setting max_pod: 2
+2023-11-27 17:18:06,569 - root - INFO - scheduling job stress-ng --io 7 --vm 6 --vm-bytes 4G --timeout 199s
+2023-11-27 17:18:06,652 - root - INFO - job scheduled
+2023-11-27 17:18:21,776 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:18:36,901 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:18:52,024 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:18:59,868 - root - INFO - save CPU and max_pod data
+2023-11-27 17:18:59,868 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035]
+2023-11-27 17:18:59,868 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2]
+2023-11-27 17:19:02,704 - root - INFO - current CPU: 0.7671903006875
+2023-11-27 17:19:02,704 - root - INFO - setting max_pod: 3
+2023-11-27 17:19:07,149 - root - INFO - scheduling job stress-ng --io 3 --vm 7 --vm-bytes 4G --timeout 184s
+2023-11-27 17:19:07,227 - root - INFO - job scheduled
+2023-11-27 17:19:22,593 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:19:37,787 - root - INFO - scheduling job stress-ng --io 4 --vm 8 --vm-bytes 1G --timeout 200s
+2023-11-27 17:19:37,879 - root - INFO - job scheduled
+2023-11-27 17:19:53,053 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:19:59,928 - root - INFO - save CPU and max_pod data
+2023-11-27 17:19:59,928 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875]
+2023-11-27 17:19:59,928 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3]
+2023-11-27 17:20:04,382 - root - INFO - current CPU: 0.9642768481875001
+2023-11-27 17:20:04,382 - root - INFO - setting max_pod: 3
+2023-11-27 17:20:08,202 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:20:23,373 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:20:38,502 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:20:53,644 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:20:59,988 - root - INFO - save CPU and max_pod data
+2023-11-27 17:20:59,988 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001]
+2023-11-27 17:20:59,988 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3]
+2023-11-27 17:21:05,370 - root - INFO - current CPU: 0.99996270325
+2023-11-27 17:21:05,371 - root - INFO - setting max_pod: 2
+2023-11-27 17:21:08,801 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:21:23,957 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:21:39,201 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:21:54,361 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:22:00,049 - root - INFO - save CPU and max_pod data
+2023-11-27 17:22:00,049 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325]
+2023-11-27 17:22:00,049 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2]
+2023-11-27 17:22:06,359 - root - INFO - current CPU: 0.9575265613749999
+2023-11-27 17:22:06,359 - root - INFO - setting max_pod: 1
+2023-11-27 17:22:09,547 - root - INFO - current pod num: 2, max pod num: 1, job not scheduled
+2023-11-27 17:22:24,784 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:22:39,876 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:22:54,987 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:23:00,108 - root - INFO - save CPU and max_pod data
+2023-11-27 17:23:00,108 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999]
+2023-11-27 17:23:00,108 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1]
+2023-11-27 17:23:06,799 - root - INFO - current CPU: 0.5127764494375
+2023-11-27 17:23:06,799 - root - INFO - setting max_pod: 1
+2023-11-27 17:23:10,103 - root - INFO - scheduling job stress-ng --io 5 --vm 4 --vm-bytes 3G --timeout 197s
+2023-11-27 17:23:10,162 - root - INFO - job scheduled
+2023-11-27 17:23:25,274 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:23:40,367 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:23:55,466 - root - INFO - current pod num: 1, max pod num: 1, job not scheduled
+2023-11-27 17:24:00,168 - root - INFO - save CPU and max_pod data
+2023-11-27 17:24:00,168 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375]
+2023-11-27 17:24:00,168 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1]
+2023-11-27 17:24:07,272 - root - INFO - current CPU: 0.2672165358125
+2023-11-27 17:24:07,272 - root - INFO - setting max_pod: 2
+2023-11-27 17:24:10,571 - root - INFO - scheduling job stress-ng --io 3 --vm 7 --vm-bytes 1G --timeout 193s
+2023-11-27 17:24:10,635 - root - INFO - job scheduled
+2023-11-27 17:24:25,734 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:24:40,852 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:24:55,954 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:25:00,228 - root - INFO - save CPU and max_pod data
+2023-11-27 17:25:00,228 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125]
+2023-11-27 17:25:00,228 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2]
+2023-11-27 17:25:07,739 - root - INFO - current CPU: 0.7011600119375
+2023-11-27 17:25:07,739 - root - INFO - setting max_pod: 4
+2023-11-27 17:25:11,062 - root - INFO - scheduling job stress-ng --io 6 --vm 6 --vm-bytes 1G --timeout 202s
+2023-11-27 17:25:11,137 - root - INFO - job scheduled
+2023-11-27 17:25:26,311 - root - INFO - scheduling job stress-ng --io 6 --vm 6 --vm-bytes 3G --timeout 191s
+2023-11-27 17:25:26,382 - root - INFO - job scheduled
+2023-11-27 17:25:41,558 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:25:56,843 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:26:00,288 - root - INFO - save CPU and max_pod data
+2023-11-27 17:26:00,288 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375]
+2023-11-27 17:26:00,288 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4]
+2023-11-27 17:26:08,795 - root - INFO - current CPU: 0.9997766970625002
+2023-11-27 17:26:08,795 - root - INFO - setting max_pod: 4
+2023-11-27 17:26:12,056 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:26:27,207 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:26:42,461 - root - INFO - scheduling job stress-ng --io 6 --vm 3 --vm-bytes 2G --timeout 201s
+2023-11-27 17:26:42,547 - root - INFO - job scheduled
+2023-11-27 17:26:57,724 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:27:00,348 - root - INFO - save CPU and max_pod data
+2023-11-27 17:27:00,348 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002]
+2023-11-27 17:27:00,348 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4]
+2023-11-27 17:27:09,638 - root - INFO - current CPU: 0.9998507164999999
+2023-11-27 17:27:09,639 - root - INFO - setting max_pod: 3
+2023-11-27 17:27:12,934 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:27:28,102 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:27:43,442 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:27:58,578 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:28:00,408 - root - INFO - save CPU and max_pod data
+2023-11-27 17:28:00,408 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999]
+2023-11-27 17:28:00,408 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3]
+2023-11-27 17:28:10,422 - root - INFO - current CPU: 0.955155507125
+2023-11-27 17:28:10,422 - root - INFO - setting max_pod: 2
+2023-11-27 17:28:13,741 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:28:28,894 - root - INFO - current pod num: 3, max pod num: 2, job not scheduled
+2023-11-27 17:28:44,081 - root - INFO - scheduling job stress-ng --io 5 --vm 8 --vm-bytes 2G --timeout 200s
+2023-11-27 17:28:44,249 - root - INFO - job scheduled
+2023-11-27 17:28:59,360 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:29:00,468 - root - INFO - save CPU and max_pod data
+2023-11-27 17:29:00,468 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125]
+2023-11-27 17:29:00,468 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2]
+2023-11-27 17:29:10,936 - root - INFO - current CPU: 0.41972363056250006
+2023-11-27 17:29:10,936 - root - INFO - setting max_pod: 2
+2023-11-27 17:29:14,469 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:29:29,597 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:29:44,720 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:29:59,841 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:30:00,528 - root - INFO - save CPU and max_pod data
+2023-11-27 17:30:00,528 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006]
+2023-11-27 17:30:00,528 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2]
+2023-11-27 17:30:11,402 - root - INFO - current CPU: 0.708341613625
+2023-11-27 17:30:11,402 - root - INFO - setting max_pod: 3
+2023-11-27 17:30:15,102 - root - INFO - scheduling job stress-ng --io 4 --vm 4 --vm-bytes 2G --timeout 203s
+2023-11-27 17:30:15,183 - root - INFO - job scheduled
+2023-11-27 17:30:30,295 - root - INFO - scheduling job stress-ng --io 7 --vm 5 --vm-bytes 4G --timeout 185s
+2023-11-27 17:30:30,351 - root - INFO - job scheduled
+2023-11-27 17:30:45,495 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:31:00,588 - root - INFO - save CPU and max_pod data
+2023-11-27 17:31:00,588 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625]
+2023-11-27 17:31:00,588 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3]
+2023-11-27 17:31:00,650 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:31:12,609 - root - INFO - current CPU: 0.9998258359375
+2023-11-27 17:31:12,610 - root - INFO - setting max_pod: 3
+2023-11-27 17:31:15,905 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:31:31,063 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:31:46,287 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:32:00,648 - root - INFO - save CPU and max_pod data
+2023-11-27 17:32:00,648 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375]
+2023-11-27 17:32:00,648 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3]
+2023-11-27 17:32:01,458 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:32:13,092 - root - INFO - current CPU: 0.918407407375
+2023-11-27 17:32:13,092 - root - INFO - setting max_pod: 2
+2023-11-27 17:32:16,636 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:32:31,746 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:32:46,865 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:33:00,708 - root - INFO - save CPU and max_pod data
+2023-11-27 17:33:00,708 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375]
+2023-11-27 17:33:00,708 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2]
+2023-11-27 17:33:01,996 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:33:13,599 - root - INFO - current CPU: 0.581296665
+2023-11-27 17:33:13,600 - root - INFO - setting max_pod: 2
+2023-11-27 17:33:17,114 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:33:32,241 - root - INFO - current pod num: 2, max pod num: 2, job not scheduled
+2023-11-27 17:33:47,435 - root - INFO - scheduling job stress-ng --io 7 --vm 3 --vm-bytes 3G --timeout 193s
+2023-11-27 17:33:47,494 - root - INFO - job scheduled
+2023-11-27 17:34:00,772 - root - INFO - save CPU and max_pod data
+2023-11-27 17:34:00,772 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665]
+2023-11-27 17:34:00,772 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2]
+2023-11-27 17:34:02,580 - root - INFO - scheduling job stress-ng --io 3 --vm 7 --vm-bytes 2G --timeout 207s
+2023-11-27 17:34:02,656 - root - INFO - job scheduled
+2023-11-27 17:34:14,161 - root - INFO - current CPU: 0.357420222
+2023-11-27 17:34:14,162 - root - INFO - setting max_pod: 3
+2023-11-27 17:34:17,792 - root - INFO - scheduling job stress-ng --io 7 --vm 3 --vm-bytes 1G --timeout 199s
+2023-11-27 17:34:17,932 - root - INFO - job scheduled
+2023-11-27 17:34:33,051 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:34:48,182 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:35:00,832 - root - INFO - save CPU and max_pod data
+2023-11-27 17:35:00,832 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222]
+2023-11-27 17:35:00,832 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3]
+2023-11-27 17:35:03,318 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:35:14,651 - root - INFO - current CPU: 0.8296789446875
+2023-11-27 17:35:14,652 - root - INFO - setting max_pod: 4
+2023-11-27 17:35:18,452 - root - INFO - scheduling job stress-ng --io 7 --vm 4 --vm-bytes 2G --timeout 189s
+2023-11-27 17:35:18,513 - root - INFO - job scheduled
+2023-11-27 17:35:33,683 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:35:48,871 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:36:00,892 - root - INFO - save CPU and max_pod data
+2023-11-27 17:36:00,892 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875]
+2023-11-27 17:36:00,892 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4]
+2023-11-27 17:36:04,032 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:36:15,767 - root - INFO - current CPU: 0.9997016557500001
+2023-11-27 17:36:15,767 - root - INFO - setting max_pod: 4
+2023-11-27 17:36:19,189 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:36:34,393 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:36:49,610 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:37:00,952 - root - INFO - save CPU and max_pod data
+2023-11-27 17:37:00,952 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001]
+2023-11-27 17:37:00,952 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4]
+2023-11-27 17:37:04,871 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:37:16,696 - root - INFO - current CPU: 1e-09
+2023-11-27 17:37:16,696 - root - INFO - setting max_pod: 3
+2023-11-27 17:37:20,407 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:37:35,560 - root - INFO - scheduling job stress-ng --io 4 --vm 4 --vm-bytes 1G --timeout 180s
+2023-11-27 17:37:35,642 - root - INFO - job scheduled
+2023-11-27 17:37:50,801 - root - INFO - scheduling job stress-ng --io 3 --vm 5 --vm-bytes 3G --timeout 196s
+2023-11-27 17:37:50,863 - root - INFO - job scheduled
+2023-11-27 17:38:01,012 - root - INFO - save CPU and max_pod data
+2023-11-27 17:38:01,012 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09]
+2023-11-27 17:38:01,012 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3]
+2023-11-27 17:38:06,016 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:38:17,566 - root - INFO - current CPU: 0.81903505275
+2023-11-27 17:38:17,566 - root - INFO - setting max_pod: 6
+2023-11-27 17:38:21,157 - root - INFO - scheduling job stress-ng --io 5 --vm 4 --vm-bytes 4G --timeout 203s
+2023-11-27 17:38:21,226 - root - INFO - job scheduled
+2023-11-27 17:38:36,470 - root - INFO - scheduling job stress-ng --io 3 --vm 7 --vm-bytes 1G --timeout 196s
+2023-11-27 17:38:36,552 - root - INFO - job scheduled
+2023-11-27 17:38:51,718 - root - INFO - scheduling job stress-ng --io 8 --vm 8 --vm-bytes 3G --timeout 193s
+2023-11-27 17:38:51,829 - root - INFO - job scheduled
+2023-11-27 17:39:01,072 - root - INFO - save CPU and max_pod data
+2023-11-27 17:39:01,072 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275]
+2023-11-27 17:39:01,073 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6]
+2023-11-27 17:39:07,413 - root - INFO - scheduling job stress-ng --io 4 --vm 5 --vm-bytes 4G --timeout 203s
+2023-11-27 17:39:07,521 - root - INFO - job scheduled
+2023-11-27 17:39:19,524 - root - INFO - current CPU: 0.9998262681874999
+2023-11-27 17:39:19,528 - root - INFO - setting max_pod: 6
+2023-11-27 17:39:23,053 - root - INFO - scheduling job stress-ng --io 6 --vm 8 --vm-bytes 4G --timeout 205s
+2023-11-27 17:39:23,192 - root - INFO - job scheduled
+2023-11-27 17:39:39,532 - root - INFO - scheduling job stress-ng --io 6 --vm 5 --vm-bytes 3G --timeout 183s
+2023-11-27 17:39:39,645 - root - INFO - job scheduled
+2023-11-27 17:39:55,393 - root - INFO - scheduling job stress-ng --io 6 --vm 7 --vm-bytes 4G --timeout 207s
+2023-11-27 17:39:55,584 - root - INFO - job scheduled
+2023-11-27 17:40:01,132 - root - INFO - save CPU and max_pod data
+2023-11-27 17:40:01,132 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999]
+2023-11-27 17:40:01,132 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6]
+2023-11-27 17:40:10,870 - root - INFO - scheduling job stress-ng --io 7 --vm 8 --vm-bytes 2G --timeout 199s
+2023-11-27 17:40:10,952 - root - INFO - job scheduled
+2023-11-27 17:40:21,575 - root - INFO - current CPU: 1e-09
+2023-11-27 17:40:21,578 - root - INFO - setting max_pod: 5
+2023-11-27 17:40:26,392 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:40:41,620 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:40:56,875 - root - INFO - scheduling job stress-ng --io 7 --vm 8 --vm-bytes 4G --timeout 187s
+2023-11-27 17:40:57,090 - root - INFO - job scheduled
+2023-11-27 17:41:01,192 - root - INFO - save CPU and max_pod data
+2023-11-27 17:41:01,192 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09]
+2023-11-27 17:41:01,192 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5]
+2023-11-27 17:41:12,271 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:41:22,530 - root - INFO - current CPU: 1.000024873125
+2023-11-27 17:41:22,531 - root - INFO - setting max_pod: 8
+2023-11-27 17:41:30,368 - root - INFO - scheduling job stress-ng --io 7 --vm 6 --vm-bytes 1G --timeout 194s
+2023-11-27 17:41:30,619 - root - INFO - job scheduled
+2023-11-27 17:41:46,167 - root - INFO - scheduling job stress-ng --io 8 --vm 4 --vm-bytes 1G --timeout 207s
+2023-11-27 17:41:46,254 - root - INFO - job scheduled
+2023-11-27 17:42:01,252 - root - INFO - save CPU and max_pod data
+2023-11-27 17:42:01,252 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125]
+2023-11-27 17:42:01,252 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8]
+2023-11-27 17:42:01,626 - root - INFO - scheduling job stress-ng --io 4 --vm 7 --vm-bytes 4G --timeout 187s
+2023-11-27 17:42:01,726 - root - INFO - job scheduled
+2023-11-27 17:42:16,892 - root - INFO - scheduling job stress-ng --io 3 --vm 5 --vm-bytes 3G --timeout 199s
+2023-11-27 17:42:16,968 - root - INFO - job scheduled
+2023-11-27 17:42:24,155 - root - INFO - current CPU: 1.000024883
+2023-11-27 17:42:24,155 - root - INFO - setting max_pod: 7
+2023-11-27 17:42:32,591 - root - INFO - scheduling job stress-ng --io 4 --vm 7 --vm-bytes 3G --timeout 197s
+2023-11-27 17:42:32,805 - root - INFO - job scheduled
+2023-11-27 17:42:48,122 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 4G --timeout 197s
+2023-11-27 17:42:48,180 - root - INFO - job scheduled
+2023-11-27 17:43:01,312 - root - INFO - save CPU and max_pod data
+2023-11-27 17:43:01,312 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883]
+2023-11-27 17:43:01,312 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7]
+2023-11-27 17:43:03,374 - root - INFO - scheduling job stress-ng --vm 2 --vm-bytes 4G --timeout 191s
+2023-11-27 17:43:03,486 - root - INFO - job scheduled
+2023-11-27 17:43:18,913 - root - INFO - scheduling job stress-ng --io 3 --vm 2 --vm-bytes 2G --timeout 197s
+2023-11-27 17:43:19,018 - root - INFO - job scheduled
+2023-11-27 17:43:26,453 - root - INFO - current CPU: 0.9996026226875
+2023-11-27 17:43:26,453 - root - INFO - setting max_pod: 6
+2023-11-27 17:43:34,281 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:43:49,585 - root - INFO - scheduling job stress-ng --vm 3 --vm-bytes 1G --timeout 205s
+2023-11-27 17:43:49,713 - root - INFO - job scheduled
+2023-11-27 17:44:01,376 - root - INFO - save CPU and max_pod data
+2023-11-27 17:44:01,376 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875]
+2023-11-27 17:44:01,377 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6]
+2023-11-27 17:44:04,939 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:44:20,129 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:44:27,546 - root - INFO - current CPU: 0.9999006408125
+2023-11-27 17:44:27,546 - root - INFO - setting max_pod: 5
+2023-11-27 17:44:35,357 - root - INFO - current pod num: 6, max pod num: 5, job not scheduled
+2023-11-27 17:44:50,568 - root - INFO - current pod num: 6, max pod num: 5, job not scheduled
+2023-11-27 17:45:01,436 - root - INFO - save CPU and max_pod data
+2023-11-27 17:45:01,436 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125]
+2023-11-27 17:45:01,436 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5]
+2023-11-27 17:45:05,871 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:45:21,072 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 3G --timeout 186s
+2023-11-27 17:45:21,157 - root - INFO - job scheduled
+2023-11-27 17:45:28,538 - root - INFO - current CPU: 0.9821801371875
+2023-11-27 17:45:28,538 - root - INFO - setting max_pod: 4
+2023-11-27 17:45:36,324 - root - INFO - current pod num: 5, max pod num: 4, job not scheduled
+2023-11-27 17:45:51,504 - root - INFO - current pod num: 5, max pod num: 4, job not scheduled
+2023-11-27 17:46:01,496 - root - INFO - save CPU and max_pod data
+2023-11-27 17:46:01,496 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875]
+2023-11-27 17:46:01,496 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4]
+2023-11-27 17:46:06,792 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:46:22,031 - root - INFO - scheduling job stress-ng --vm 2 --vm-bytes 3G --timeout 180s
+2023-11-27 17:46:22,119 - root - INFO - job scheduled
+2023-11-27 17:46:28,995 - root - INFO - current CPU: 0.5688780584375
+2023-11-27 17:46:28,995 - root - INFO - setting max_pod: 3
+2023-11-27 17:46:37,265 - root - INFO - current pod num: 4, max pod num: 3, job not scheduled
+2023-11-27 17:46:52,429 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:47:01,560 - root - INFO - save CPU and max_pod data
+2023-11-27 17:47:01,560 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375]
+2023-11-27 17:47:01,560 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3]
+2023-11-27 17:47:07,530 - root - INFO - current pod num: 3, max pod num: 3, job not scheduled
+2023-11-27 17:47:22,676 - root - INFO - scheduling job stress-ng --io 1 --vm 1 --vm-bytes 2G --timeout 202s
+2023-11-27 17:47:22,734 - root - INFO - job scheduled
+2023-11-27 17:47:29,427 - root - INFO - current CPU: 0.43565243349999994
+2023-11-27 17:47:29,427 - root - INFO - setting max_pod: 4
+2023-11-27 17:47:37,885 - root - INFO - scheduling job stress-ng --io 1 --vm 3 --vm-bytes 1G --timeout 182s
+2023-11-27 17:47:37,930 - root - INFO - job scheduled
+2023-11-27 17:47:53,124 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:48:01,620 - root - INFO - save CPU and max_pod data
+2023-11-27 17:48:01,620 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994]
+2023-11-27 17:48:01,620 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4]
+2023-11-27 17:48:08,267 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:48:23,401 - root - INFO - current pod num: 4, max pod num: 4, job not scheduled
+2023-11-27 17:48:29,867 - root - INFO - current CPU: 0.5235393649375
+2023-11-27 17:48:29,867 - root - INFO - setting max_pod: 5
+2023-11-27 17:48:38,560 - root - INFO - scheduling job stress-ng --vm 1 --vm-bytes 4G --timeout 181s
+2023-11-27 17:48:38,650 - root - INFO - job scheduled
+2023-11-27 17:48:53,803 - root - INFO - scheduling job stress-ng --io 3 --vm 1 --vm-bytes 4G --timeout 198s
+2023-11-27 17:48:53,862 - root - INFO - job scheduled
+2023-11-27 17:49:01,680 - root - INFO - save CPU and max_pod data
+2023-11-27 17:49:01,680 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375]
+2023-11-27 17:49:01,680 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5]
+2023-11-27 17:49:09,015 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:49:24,207 - root - INFO - current pod num: 5, max pod num: 5, job not scheduled
+2023-11-27 17:49:30,436 - root - INFO - current CPU: 0.5206221426875
+2023-11-27 17:49:30,436 - root - INFO - setting max_pod: 6
+2023-11-27 17:49:39,362 - root - INFO - scheduling job stress-ng --io 3 --vm 1 --vm-bytes 3G --timeout 193s
+2023-11-27 17:49:39,425 - root - INFO - job scheduled
+2023-11-27 17:49:54,553 - root - INFO - scheduling job stress-ng --io 2 --vm 1 --vm-bytes 3G --timeout 207s
+2023-11-27 17:49:54,609 - root - INFO - job scheduled
+2023-11-27 17:50:01,752 - root - INFO - save CPU and max_pod data
+2023-11-27 17:50:01,752 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875]
+2023-11-27 17:50:01,752 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6]
+2023-11-27 17:50:09,772 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:50:24,913 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:50:30,884 - root - INFO - current CPU: 0.51544161525
+2023-11-27 17:50:30,884 - root - INFO - setting max_pod: 7
+2023-11-27 17:50:40,073 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 2G --timeout 208s
+2023-11-27 17:50:40,140 - root - INFO - job scheduled
+2023-11-27 17:50:55,566 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 1G --timeout 187s
+2023-11-27 17:50:55,649 - root - INFO - job scheduled
+2023-11-27 17:51:01,812 - root - INFO - save CPU and max_pod data
+2023-11-27 17:51:01,812 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525]
+2023-11-27 17:51:01,812 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7]
+2023-11-27 17:51:10,816 - root - INFO - scheduling job stress-ng --io 1 --vm 2 --vm-bytes 4G --timeout 203s
+2023-11-27 17:51:10,871 - root - INFO - job scheduled
+2023-11-27 17:51:26,047 - root - INFO - current pod num: 7, max pod num: 7, job not scheduled
+2023-11-27 17:51:31,384 - root - INFO - current CPU: 0.6130348258125
+2023-11-27 17:51:31,384 - root - INFO - setting max_pod: 8
+2023-11-27 17:51:41,202 - root - INFO - scheduling job stress-ng --io 2 --vm 3 --vm-bytes 2G --timeout 190s
+2023-11-27 17:51:41,265 - root - INFO - job scheduled
+2023-11-27 17:51:56,512 - root - INFO - scheduling job stress-ng --io 1 --vm 1 --vm-bytes 4G --timeout 188s
+2023-11-27 17:51:56,582 - root - INFO - job scheduled
+2023-11-27 17:52:01,884 - root - INFO - save CPU and max_pod data
+2023-11-27 17:52:01,886 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125]
+2023-11-27 17:52:01,887 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8]
+2023-11-27 17:52:11,751 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 17:52:26,987 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 3G --timeout 204s
+2023-11-27 17:52:27,054 - root - INFO - job scheduled
+2023-11-27 17:52:32,060 - root - INFO - current CPU: 0.8021680888750001
+2023-11-27 17:52:32,061 - root - INFO - setting max_pod: 9
+2023-11-27 17:52:42,269 - root - INFO - scheduling job stress-ng --io 1 --vm 3 --vm-bytes 2G --timeout 193s
+2023-11-27 17:52:42,340 - root - INFO - job scheduled
+2023-11-27 17:52:57,664 - root - INFO - current pod num: 9, max pod num: 9, job not scheduled
+2023-11-27 17:53:01,944 - root - INFO - save CPU and max_pod data
+2023-11-27 17:53:01,944 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001]
+2023-11-27 17:53:01,944 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9]
+2023-11-27 17:53:13,012 - root - INFO - scheduling job stress-ng --vm 3 --vm-bytes 2G --timeout 193s
+2023-11-27 17:53:13,107 - root - INFO - job scheduled
+2023-11-27 17:53:28,410 - root - INFO - scheduling job stress-ng --io 2 --timeout 208s
+2023-11-27 17:53:28,496 - root - INFO - job scheduled
+2023-11-27 17:53:33,054 - root - INFO - current CPU: 0.9999007049375002
+2023-11-27 17:53:33,054 - root - INFO - setting max_pod: 9
+2023-11-27 17:53:43,731 - root - INFO - current pod num: 9, max pod num: 9, job not scheduled
+2023-11-27 17:53:59,040 - root - INFO - current pod num: 9, max pod num: 9, job not scheduled
+2023-11-27 17:54:02,004 - root - INFO - save CPU and max_pod data
+2023-11-27 17:54:02,004 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002]
+2023-11-27 17:54:02,004 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9]
+2023-11-27 17:54:14,547 - root - INFO - scheduling job stress-ng --io 3 --vm 2 --vm-bytes 3G --timeout 184s
+2023-11-27 17:54:14,639 - root - INFO - job scheduled
+2023-11-27 17:54:29,855 - root - INFO - scheduling job stress-ng --io 1 --vm 1 --vm-bytes 1G --timeout 195s
+2023-11-27 17:54:29,935 - root - INFO - job scheduled
+2023-11-27 17:54:33,935 - root - INFO - current CPU: 0.9784341883125
+2023-11-27 17:54:33,935 - root - INFO - setting max_pod: 8
+2023-11-27 17:54:45,236 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 17:55:00,481 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 3G --timeout 186s
+2023-11-27 17:55:00,541 - root - INFO - job scheduled
+2023-11-27 17:55:02,076 - root - INFO - save CPU and max_pod data
+2023-11-27 17:55:02,076 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125]
+2023-11-27 17:55:02,076 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8]
+2023-11-27 17:55:15,888 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 1G --timeout 207s
+2023-11-27 17:55:15,968 - root - INFO - job scheduled
+2023-11-27 17:55:31,215 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 17:55:34,981 - root - INFO - current CPU: 0.9866931479374998
+2023-11-27 17:55:34,981 - root - INFO - setting max_pod: 7
+2023-11-27 17:55:46,440 - root - INFO - current pod num: 8, max pod num: 7, job not scheduled
+2023-11-27 17:56:01,733 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 2G --timeout 192s
+2023-11-27 17:56:01,803 - root - INFO - job scheduled
+2023-11-27 17:56:02,136 - root - INFO - save CPU and max_pod data
+2023-11-27 17:56:02,136 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998]
+2023-11-27 17:56:02,136 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7]
+2023-11-27 17:56:17,021 - root - INFO - current pod num: 7, max pod num: 7, job not scheduled
+2023-11-27 17:56:32,181 - root - INFO - current pod num: 7, max pod num: 7, job not scheduled
+2023-11-27 17:56:35,471 - root - INFO - current CPU: 0.8876806196875
+2023-11-27 17:56:35,471 - root - INFO - setting max_pod: 6
+2023-11-27 17:56:47,445 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:57:02,196 - root - INFO - save CPU and max_pod data
+2023-11-27 17:57:02,196 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875]
+2023-11-27 17:57:02,196 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6]
+2023-11-27 17:57:02,681 - root - INFO - scheduling job stress-ng --io 1 --vm 1 --vm-bytes 3G --timeout 203s
+2023-11-27 17:57:02,751 - root - INFO - job scheduled
+2023-11-27 17:57:17,918 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:57:33,133 - root - INFO - scheduling job stress-ng --vm 1 --vm-bytes 1G --timeout 190s
+2023-11-27 17:57:33,189 - root - INFO - job scheduled
+2023-11-27 17:57:35,936 - root - INFO - current CPU: 0.7615657920625
+2023-11-27 17:57:35,936 - root - INFO - setting max_pod: 6
+2023-11-27 17:57:48,363 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:58:02,268 - root - INFO - save CPU and max_pod data
+2023-11-27 17:58:02,268 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625]
+2023-11-27 17:58:02,268 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6]
+2023-11-27 17:58:03,746 - root - INFO - scheduling job stress-ng --io 3 --vm 1 --vm-bytes 1G --timeout 204s
+2023-11-27 17:58:03,819 - root - INFO - job scheduled
+2023-11-27 17:58:19,206 - root - INFO - scheduling job stress-ng --io 1 --vm 3 --vm-bytes 1G --timeout 188s
+2023-11-27 17:58:19,269 - root - INFO - job scheduled
+2023-11-27 17:58:34,441 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:58:36,427 - root - INFO - current CPU: 0.5952351330625
+2023-11-27 17:58:36,427 - root - INFO - setting max_pod: 6
+2023-11-27 17:58:49,646 - root - INFO - scheduling job stress-ng --vm 1 --vm-bytes 3G --timeout 182s
+2023-11-27 17:58:49,710 - root - INFO - job scheduled
+2023-11-27 17:59:02,332 - root - INFO - save CPU and max_pod data
+2023-11-27 17:59:02,332 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625]
+2023-11-27 17:59:02,332 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6]
+2023-11-27 17:59:04,900 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:59:20,162 - root - INFO - scheduling job stress-ng --io 2 --vm 2 --vm-bytes 4G --timeout 199s
+2023-11-27 17:59:20,245 - root - INFO - job scheduled
+2023-11-27 17:59:35,480 - root - INFO - current pod num: 6, max pod num: 6, job not scheduled
+2023-11-27 17:59:37,055 - root - INFO - current CPU: 0.549940280625
+2023-11-27 17:59:37,055 - root - INFO - setting max_pod: 7
+2023-11-27 17:59:50,688 - root - INFO - scheduling job stress-ng --io 3 --vm 2 --vm-bytes 1G --timeout 187s
+2023-11-27 17:59:50,791 - root - INFO - job scheduled
+2023-11-27 18:00:02,392 - root - INFO - save CPU and max_pod data
+2023-11-27 18:00:02,392 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625]
+2023-11-27 18:00:02,392 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7]
+2023-11-27 18:00:05,978 - root - INFO - current pod num: 7, max pod num: 7, job not scheduled
+2023-11-27 18:00:21,139 - root - INFO - current pod num: 7, max pod num: 7, job not scheduled
+2023-11-27 18:00:36,327 - root - INFO - scheduling job stress-ng --io 2 --vm 3 --vm-bytes 3G --timeout 205s
+2023-11-27 18:00:36,492 - root - INFO - job scheduled
+2023-11-27 18:00:37,614 - root - INFO - current CPU: 0.7083644231875
+2023-11-27 18:00:37,614 - root - INFO - setting max_pod: 8
+2023-11-27 18:00:51,793 - root - INFO - scheduling job stress-ng --io 1 --vm 2 --vm-bytes 4G --timeout 207s
+2023-11-27 18:00:51,867 - root - INFO - job scheduled
+2023-11-27 18:01:02,452 - root - INFO - save CPU and max_pod data
+2023-11-27 18:01:02,452 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875]
+2023-11-27 18:01:02,452 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8]
+2023-11-27 18:01:07,061 - root - INFO - scheduling job stress-ng --io 3 --vm 1 --vm-bytes 4G --timeout 195s
+2023-11-27 18:01:07,138 - root - INFO - job scheduled
+2023-11-27 18:01:22,373 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 18:01:37,655 - root - INFO - scheduling job stress-ng --io 3 --vm 3 --vm-bytes 2G --timeout 182s
+2023-11-27 18:01:37,737 - root - INFO - job scheduled
+2023-11-27 18:01:38,147 - root - INFO - current CPU: 0.9465882001875001
+2023-11-27 18:01:38,147 - root - INFO - setting max_pod: 8
+2023-11-27 18:01:52,930 - root - INFO - scheduling job stress-ng --vm 1 --vm-bytes 2G --timeout 181s
+2023-11-27 18:01:53,003 - root - INFO - job scheduled
+2023-11-27 18:02:02,512 - root - INFO - save CPU and max_pod data
+2023-11-27 18:02:02,512 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001]
+2023-11-27 18:02:02,512 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8]
+2023-11-27 18:02:08,316 - root - INFO - scheduling job stress-ng --io 2 --vm 1 --vm-bytes 3G --timeout 182s
+2023-11-27 18:02:08,379 - root - INFO - job scheduled
+2023-11-27 18:02:23,575 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 18:02:38,767 - root - INFO - current CPU: 0.9429937888125
+2023-11-27 18:02:38,767 - root - INFO - setting max_pod: 8
+2023-11-27 18:02:38,778 - root - INFO - current pod num: 8, max pod num: 8, job not scheduled
+2023-11-27 18:02:54,040 - root - INFO - scheduling job stress-ng --io 1 --vm 1 --vm-bytes 2G --timeout 187s
+2023-11-27 18:02:54,104 - root - INFO - job scheduled
+2023-11-27 18:03:02,572 - root - INFO - save CPU and max_pod data
+2023-11-27 18:03:02,572 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125]
+2023-11-27 18:03:02,573 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8]
+2023-11-27 18:03:09,116 - root - INFO - job finished
+2023-11-27 18:03:39,250 - root - INFO - current CPU: 0.768952395125
+2023-11-27 18:03:39,250 - root - INFO - setting max_pod: 8
+2023-11-27 18:04:02,632 - root - INFO - save CPU and max_pod data
+2023-11-27 18:04:02,632 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125]
+2023-11-27 18:04:02,632 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8]
+2023-11-27 18:04:39,711 - root - INFO - current CPU: 0.563165356625
+2023-11-27 18:04:39,711 - root - INFO - setting max_pod: 8
+2023-11-27 18:05:02,692 - root - INFO - save CPU and max_pod data
+2023-11-27 18:05:02,692 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625]
+2023-11-27 18:05:02,694 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8]
+2023-11-27 18:05:40,103 - root - INFO - current CPU: 0.1074574499375
+2023-11-27 18:05:40,103 - root - INFO - setting max_pod: 9
+2023-11-27 18:06:02,755 - root - INFO - save CPU and max_pod data
+2023-11-27 18:06:02,756 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375]
+2023-11-27 18:06:02,756 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9]
+2023-11-27 18:06:40,480 - root - INFO - current CPU: 0.013574379125000001
+2023-11-27 18:06:40,480 - root - INFO - setting max_pod: 11
+2023-11-27 18:07:02,816 - root - INFO - save CPU and max_pod data
+2023-11-27 18:07:02,817 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375, 0.013574379125000001]
+2023-11-27 18:07:02,817 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9, 11]
+2023-11-27 18:07:40,883 - root - INFO - current CPU: 0.01287121325
+2023-11-27 18:07:40,884 - root - INFO - maxpod hitting maxpod 12
+2023-11-27 18:07:40,884 - root - INFO - setting max_pod: 12
+2023-11-27 18:08:02,835 - root - INFO - save CPU and max_pod data
+2023-11-27 18:08:02,835 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375, 0.013574379125000001, 0.01287121325]
+2023-11-27 18:08:02,835 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9, 11, 12]
+2023-11-27 18:08:41,283 - root - INFO - current CPU: 0.0132056701875
+2023-11-27 18:08:41,283 - root - INFO - maxpod hitting maxpod 12
+2023-11-27 18:08:41,283 - root - INFO - setting max_pod: 12
+2023-11-27 18:09:02,896 - root - INFO - save CPU and max_pod data
+2023-11-27 18:09:02,896 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375, 0.013574379125000001, 0.01287121325, 0.0132056701875]
+2023-11-27 18:09:02,896 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9, 11, 12, 12]
+2023-11-27 18:09:41,682 - root - INFO - current CPU: 0.014239876625000002
+2023-11-27 18:09:41,683 - root - INFO - maxpod hitting maxpod 12
+2023-11-27 18:09:41,683 - root - INFO - setting max_pod: 12
+2023-11-27 18:10:02,941 - root - INFO - save CPU and max_pod data
+2023-11-27 18:10:02,941 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375, 0.013574379125000001, 0.01287121325, 0.0132056701875, 0.014239876625000002]
+2023-11-27 18:10:02,941 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9, 11, 12, 12, 12]
+2023-11-27 18:10:42,110 - root - INFO - current CPU: 0.0132978723125
+2023-11-27 18:10:42,111 - root - INFO - maxpod hitting maxpod 12
+2023-11-27 18:10:42,111 - root - INFO - setting max_pod: 12
+2023-11-27 18:11:03,002 - root - INFO - save CPU and max_pod data
+2023-11-27 18:11:03,003 - root - DEBUG - [0.0156063618125, 0.27693301525, 0.5768330344375, 0.9998259745, 0.9998767744375, 0.9997771063125, 0.9881153865000001, 0.9607889496875, 0.20480654462499998, 0.3901811035, 0.7671903006875, 0.9642768481875001, 0.99996270325, 0.9575265613749999, 0.5127764494375, 0.2672165358125, 0.7011600119375, 0.9997766970625002, 0.9998507164999999, 0.955155507125, 0.41972363056250006, 0.708341613625, 0.9998258359375, 0.918407407375, 0.581296665, 0.357420222, 0.8296789446875, 0.9997016557500001, 1e-09, 0.81903505275, 0.9998262681874999, 1e-09, 1.000024873125, 1.000024883, 0.9996026226875, 0.9999006408125, 0.9821801371875, 0.5688780584375, 0.43565243349999994, 0.5235393649375, 0.5206221426875, 0.51544161525, 0.6130348258125, 0.8021680888750001, 0.9999007049375002, 0.9784341883125, 0.9866931479374998, 0.8876806196875, 0.7615657920625, 0.5952351330625, 0.549940280625, 0.7083644231875, 0.9465882001875001, 0.9429937888125, 0.768952395125, 0.563165356625, 0.1074574499375, 0.013574379125000001, 0.01287121325, 0.0132056701875, 0.014239876625000002, 0.0132978723125]
+2023-11-27 18:11:03,003 - root - DEBUG - [1, 2, 4, 5, 4, 3, 2, 1, 1, 2, 3, 3, 2, 1, 1, 2, 4, 4, 3, 2, 2, 3, 3, 2, 2, 3, 4, 4, 3, 6, 6, 5, 8, 7, 6, 5, 4, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 6, 6, 7, 8, 8, 8, 8, 8, 9, 11, 12, 12, 12, 12]

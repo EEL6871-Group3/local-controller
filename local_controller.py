@@ -17,7 +17,7 @@ job_list = []
 node_name = "k8s-master"
 cur_pod_id = 0
 
-max_pod_upperbound = 8
+max_pod_upperbound = 12
 
 # API
 cpu_api = "http://localhost:5001/cpu"
@@ -158,6 +158,7 @@ def render_jobs():
 
         time.sleep(job_sleep_time)
     logging.info("job finished")
+    exit(0)
 
 def save_list_to_file(list_data, file_name):
     """
@@ -178,7 +179,9 @@ def save_list_to_file(list_data, file_name):
     
 def save_cpu_max_pod():
     while True:
-        logging.info("save CPU and max_pod data")
+        logging.info(f"save CPU and max_pod data")
+        logging.debug(CPU_data)
+        logging.debug(max_pod_data)
         save_list_to_file(CPU_data, cpu_res_file_name)
         save_list_to_file(max_pod_data, max_pod_res_file_name)
         time.sleep(sample_rate)
