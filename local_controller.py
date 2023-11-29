@@ -36,6 +36,7 @@ pid_kd=0.9610
 
 # global variables
 last_pod_start_time = None
+last_pod_finish_time = None
 max_pod = 1 # control input. Share variable, set by the closed loop, read by job assignment
 CPU_data = []
 max_pod_data = []
@@ -50,7 +51,7 @@ class pi_controller:
         """given the control error e, return the control input u
         """
         ui = self.ui_prev + self.ki * e
-        self.ui_prev = ui # TODO: should this ui_prev be rounded to an integer? (max_pod should)
+        self.ui_prev = ui
         u = self.kp * e + ui
         return u
 
@@ -87,16 +88,21 @@ def get_pod_num():
     """get the current pod number
     curl -X POST http://localhost:5000/pod-num
     return <pod_num>, msg
+    curl -X POST -H "Content-Type: application/json" -d '{"node": "k8s-master"}' http://localhost:5001/pod-num
     """
+    global last_pod_finish_time
     try:
-        response = requests.post(pod_num_api)
+        payload = {"node": node_name}
+        response = requests.post(pod_num_api, json=payload)
         if response.status_code == 200:
             res = response.json()
-            return res['pod_num'], None
+            if len(res['deleted_pods']) != 0:
+                last_pod_finish_time = datetime.now()
+            return res['pod_num'], res['deleted_pods'], None
         else:
-            return None, f"Error: {response.status_code}"
+            return None, None, f"Error: {response.status_code}"
     except Exception as e:
-        return None, e
+        return None, None, e
 
 def run_job(job_des):
     """create a new pod with the job description
@@ -117,8 +123,9 @@ def run_job(job_des):
         return None, e
 
 def closed_loop(controller):
-    global max_pod, reference_input, CPU_data, max_pod_data, sample_rate, last_pod_start_time, job_delay
+    global max_pod, reference_input, CPU_data, max_pod_data, sample_rate, last_pod_start_time, job_delay, last_pod_finish_time
     logging.info("start close loop")
+    pod_num = 0
     while True:
         # get CPU usage
         cur_cpu, msg = get_cpu()
@@ -132,26 +139,38 @@ def closed_loop(controller):
         CPU_data.append(cur_cpu)
 
         # if maxpod != podnum, it means that the system is unstable, the close loop won't execute
-        pod_num, msg = get_pod_num()
+        pod_num, _, msg = get_pod_num()
         if msg is not None:
             logging.critical(f"error when getting pod number, {msg}")
-        time_since_last_job = (datetime.now() - last_pod_start_time).total_seconds() if last_pod_start_time is not None else float("inf")
-        if pod_num != max_pod:
+            logging.critical(f"using previous pod number, {pod_num}")
+        time_since_last_job_created = (datetime.now() - last_pod_start_time).total_seconds() if last_pod_start_time is not None else float("inf")
+        time_since_last_job_deleted = (datetime.now() - last_pod_finish_time).total_seconds() if last_pod_finish_time is not None else float("inf")
+        if (pod_num > max_pod and cur_cpu > reference_input) or (pod_num < max_pod and cur_cpu < reference_input):
+            # pod_num hasn't achieve the max_pod with the right dirrection(pod could increase while CPU needs to increase), so wait until the changes actually happens
             logging.info(f"max_pod {max_pod} != pod_num {pod_num}, skipping closed loop")
-        elif time_since_last_job < job_delay:
-            logging.info(f"last jobst started {time_since_last_job}s ago, skipping closed loop, max_pod {max_pod}")
+        elif time_since_last_job_created < job_delay and cur_cpu < reference_input:
+            # pod just created, so it has the potenrial to increase the cpu to the reference input, wait for a while to let the stress tests started
+            logging.info(f"last job started {time_since_last_job_created}s ago, skipping closed loop, max_pod {max_pod}")
+        elif time_since_last_job_deleted < job_delay and cur_cpu > reference_input:
+            logging.info(f"last job finished {time_since_last_job_deleted}s ago, skipping closed loop, max_pod {max_pod}")
         else:
             # compute the close loop and undate the max_pod only if the maxpod == pod_num, otherwise, the system is not stable yet
             e = reference_input - cur_cpu
             u = controller.compute_u(e)
             logging.info(f"closed loop: e: {e}, u: {u}")
-            max_pod = round(u)
-            if max_pod < 1:
-                max_pod = 1
-            if max_pod >= max_pod_upperbound:
-                max_pod = max_pod_upperbound
-                logging.info(f"maxpod hitting maxpod {max_pod_upperbound}")
-            logging.info(f"closed loop setting max_pod to {max_pod}")
+            new_max_pod = round(u)
+            if new_max_pod < 1:
+                new_max_pod = 1
+            if new_max_pod >= max_pod_upperbound:
+                new_max_pod = max_pod_upperbound
+                logging.info(f"maxpod hitting upper bound {max_pod_upperbound}")
+            if new_max_pod > max_pod:
+                logging.info(f"scaling up, max_pod {max_pod} -> {new_max_pod}")
+            elif new_max_pod < max_pod:
+                logging.info(f"scaling down, max_pod {max_pod} -> {new_max_pod}")
+            else:
+                logging.info(f"max_pod remains {max_pod}")
+            max_pod = new_max_pod
             
         max_pod_data.append(max_pod)
         time.sleep(sample_rate)
@@ -162,21 +181,21 @@ def render_jobs():
         job = job_list[0]
 
         # check if cur_pod_num < max_pod
-        cur_pod_num, msg = get_pod_num()
+        cur_pod_num, deleted_pods, msg = get_pod_num()
         if msg != None:
             logging.critical(f"get job num error: {msg}")
-            exit(0)
+            logging.critical("abondon job rendering, will try to render this job later")
         if cur_pod_num >= max_pod:
             logging.info(f"current pod num: {cur_pod_num}, max pod num: {max_pod}, job not scheduled")
         else:
-            logging.info(f"scheduling job {job}")
+            logging.info(f"current pod num: {cur_pod_num}, scheduling job {cur_pod_id}: {job}")
             ok, msg = run_job(job)
             if not ok:
-                logging.error(f"error when trying to run job: {msg}")
+                logging.error(f"error when trying to run job: {msg}, will try to run this job again")
             else:
                 last_pod_start_time = datetime.now()
-                logging.info("job scheduled")
-            job_list = job_list[1:]
+                job_list = job_list[1:]
+                logging.info(f"job {cur_pod_id} scheduled, remaining jobs: {len(job_list)}")
 
         time.sleep(job_sleep_time)
     logging.info("job finished")

@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from job_reader import read_file_to_list
+import time
 
 def plot_y_values(y_values, title, xlabel, ylabel,file_path, yrange = None):
     # Generating x-values from 1 to the length of y_values
@@ -18,10 +19,12 @@ def plot_y_values(y_values, title, xlabel, ylabel,file_path, yrange = None):
     plt.clf()
 
 if __name__ == "__main__":
-    cpu, msg = read_file_to_list("cpu.txt")
-    cpu = [float(i) for i in cpu]
-    plot_y_values(cpu, "cpu vs k", "k", "cpu", "cpu.png", (0, 1))
+    while True:
+        cpu, msg = read_file_to_list("cpu.txt")
+        cpu = [float(i) for i in cpu]
+        plot_y_values(cpu, "cpu vs k", "k", "cpu", "cpu.png", (0, 1))
 
-    max_pod, msg = read_file_to_list("maxpod.txt")
-    max_pod = [int(i) for i in max_pod]
-    plot_y_values(max_pod, "maxpod vs k", "k", "maxpod", "maxpod.png")
+        max_pod, msg = read_file_to_list("maxpod.txt")
+        max_pod = [int(i) for i in max_pod]
+        plot_y_values(max_pod, "maxpod vs k", "k", "maxpod", "maxpod.png")
+        time.sleep(10)

@@ -1,0 +1,96 @@
+nohup: ignoring input
+ * Serving Flask app 'show_img'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5005
+ * Running on http://128.110.217.71:5005
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+128.227.1.12 - - [29/Nov/2023 10:10:44] "GET /cpu HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:10:47] "GET /cpu HTTP/1.1" 304 -
+128.227.1.14 - - [29/Nov/2023 10:11:00] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:01] "GET /favicon.ico HTTP/1.1" 404 -
+128.227.1.14 - - [29/Nov/2023 10:11:04] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:06] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:12] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:18] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:22] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:11:27] "GET /cpu HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:11:29] "GET /cpu HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:12:26] "GET /cpu HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:12:34] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:15:41] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.12 - - [29/Nov/2023 10:15:44] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:23:57] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:24:02] "GET /maxpod HTTP/1.1" 200 -
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+128.227.1.14 - - [29/Nov/2023 10:26:50] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:26:58] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:28:36] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:31:23] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:31:27] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:34:45] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:34:47] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:37:33] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:37:41] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:41:49] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:41:51] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:45:38] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:45:48] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:45:50] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:45:54] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:46:01] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:46:04] "GET /maxpod HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:46:30] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:51:52] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:51:55] "GET /cpu HTTP/1.1" 200 -
+128.227.1.14 - - [29/Nov/2023 10:51:58] "GET /maxpod HTTP/1.1" 200 -
+172.58.131.26 - - [29/Nov/2023 11:03:47] "GET /maxpod HTTP/1.1" 200 -
+172.58.131.26 - - [29/Nov/2023 11:03:48] "GET / HTTP/1.1" 404 -
+172.58.131.26 - - [29/Nov/2023 11:03:49] "GET /cpu HTTP/1.1" 200 -
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
+ * Detected change in '/users/YuqiUFL/local-controller/local_controller.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 410-176-398
