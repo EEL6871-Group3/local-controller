@@ -18,7 +18,7 @@ job_list = []
 node_name = "k8s-master"
 cur_pod_id = 0
 max_pod_upperbound = 12
-job_delay = 10 # number of seconds that we believe a the CPU is changed after a job is started, i.e., we need to wait at least that time before we start the closed loop function
+job_delay = 15 # number of seconds that we believe a the CPU is changed after a job is started, i.e., we need to wait at least that time before we start the closed loop function
 
 # API
 cpu_api = "http://localhost:5001/cpu"
@@ -49,10 +49,10 @@ class pi_controller:
     def compute_u(self, e):
         """given the control error e, return the control input u
         """
-        ui = round(self.ui_prev + self.ki * e)
+        ui = self.ui_prev + self.ki * e
         self.ui_prev = ui # TODO: should this ui_prev be rounded to an integer? (max_pod should)
         u = self.kp * e + ui
-        return round(u)
+        return u
 
 class pid_controller:
     def __init__(self, kp, ki, kd):
@@ -125,8 +125,9 @@ def closed_loop(controller):
         if msg != None:
             # error getting the cpu
             logging.critical(f"error getting the CPU: {msg}")
-            logging.critical("shutting down the controller")
-            exit(0)
+            logging.critical(f"using last CPU {CPU_data[-1]}")
+            cur_cpu = CPU_data[-1]
+        
         logging.info(f"current CPU: {cur_cpu}")
         CPU_data.append(cur_cpu)
 
@@ -136,22 +137,21 @@ def closed_loop(controller):
             logging.critical(f"error when getting pod number, {msg}")
         time_since_last_job = (datetime.now() - last_pod_start_time).total_seconds() if last_pod_start_time is not None else float("inf")
         if pod_num != max_pod:
-            logging.info("max_pod != pod_num, skipping closed loop")
-            logging.info(f"current max_pod: {max_pod}")
+            logging.info(f"max_pod {max_pod} != pod_num {pod_num}, skipping closed loop")
         elif time_since_last_job < job_delay:
-            logging.info(f"last jobst started {time_since_last_job}s ago, skipping closed loop")
-            logging.info(f"current max_pod: {max_pod}")
+            logging.info(f"last jobst started {time_since_last_job}s ago, skipping closed loop, max_pod {max_pod}")
         else:
             # compute the close loop and undate the max_pod only if the maxpod == pod_num, otherwise, the system is not stable yet
             e = reference_input - cur_cpu
-            max_pod = controller.compute_u(e)
-            logging.info(f"setting max_pod: {max_pod}")
-
+            u = controller.compute_u(e)
+            logging.info(f"closed loop: e: {e}, u: {u}")
+            max_pod = round(u)
             if max_pod < 1:
                 max_pod = 1
             if max_pod >= max_pod_upperbound:
                 max_pod = max_pod_upperbound
                 logging.info(f"maxpod hitting maxpod {max_pod_upperbound}")
+            logging.info(f"closed loop setting max_pod to {max_pod}")
             
         max_pod_data.append(max_pod)
         time.sleep(sample_rate)

@@ -6,7 +6,7 @@ def plot_y_values(y_values, title, xlabel, ylabel,file_path, yrange = None):
     x_values = list(range(1, len(y_values) + 1))
 
     # Plotting the line chart
-    plt.plot(x_values, y_values, marker='o') # 'o' is for circular markers at the data points
+    plt.plot(x_values, y_values, marker='o', markersize=3) # 'o' is for circular markers at the data points
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
