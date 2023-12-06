@@ -19,7 +19,8 @@ node_name = "k8s-master"
 cur_pod_id = 0
 max_pod_upperbound = 12
 job_delay = 15  # number of seconds that we believe a the CPU is changed after a job is started, i.e., we need to wait at least that time before we start the closed loop function
-stop_when_finished = False
+read_jobs = False  # if read a job from a file and render the jobs
+
 
 # API
 cpu_api = "http://localhost:5001/cpu"
@@ -350,19 +351,22 @@ if __name__ == "__main__":
     closed_loop_thread.start()
 
     # use max_pod to render jobs
-    job_list, error = read_file_to_list(job_file_name)
-    logging.info(f"getting job list from {job_file_name}")
-    if error != None:
-        logging.critical(f"error getting the job list: {error}")
-        logging.critical("shutting down")
-        exit(0)
+    if read_jobs:
+        job_list, error = read_file_to_list(job_file_name)
+        logging.info(f"getting job list from {job_file_name}")
+        if error != None:
+            logging.critical(f"error getting the job list: {error}")
+            logging.critical("shutting down")
+            exit(0)
 
-    # let the closed loop start first
-    time.sleep(5)
-    logging.info("getting job list sucess, start rendering jobs")
-    job_render_thread = threading.Thread(target=render_jobs)
-    job_render_thread.daemon = True
-    job_render_thread.start()
+        # let the closed loop start first
+        time.sleep(5)
+        logging.info("getting job list sucess, start rendering jobs")
+        job_render_thread = threading.Thread(target=render_jobs)
+        job_render_thread.daemon = True
+        job_render_thread.start()
+    else:
+        job_list = []
 
     save_res_thread = threading.Thread(target=save_cpu_max_pod)
     save_res_thread.daemon = True
