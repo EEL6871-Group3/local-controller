@@ -12,8 +12,8 @@ sample_rate = 5  # The closed loop system will sleep for this much of X seconds
 reference_input = 0.8  # CPU usage, from 0 to 100
 job_sleep_time = 15  # read a job every X seconds
 job_file_name = "job_list.txt"
-cpu_res_file_name = "local-controller/cpu.txt"
-max_pod_res_file_name = "local-controller/maxpod.txt"
+cpu_res_file_name = "cpu.txt"
+max_pod_res_file_name = "maxpod.txt"
 job_list = []
 node_name = "k8s-master"
 cur_pod_id = 0
@@ -255,7 +255,8 @@ def save_list_to_file(list_data, file_name):
 
 def save_cpu_max_pod():
     while True:
-        logging.info(f"saving CPU {CPU_data[-1]} and max_pod {max_pod_data[-1]}")
+        if len(CPU_data) > 0:
+            logging.info(f"saving CPU {CPU_data[-1]} and max_pod {max_pod_data[-1]}")
         save_list_to_file(CPU_data, cpu_res_file_name)
         save_list_to_file(max_pod_data, max_pod_res_file_name)
         time.sleep(sample_rate)
@@ -335,7 +336,7 @@ if __name__ == "__main__":
 
     # Log the configurations
     logging.debug(f"Sample Rate: {sample_rate} seconds")
-    logging.debug(f"Reference Input (CPU Usage): {reference_input}%")
+    logging.debug(f"Reference Input (CPU Usage): {reference_input * 100}%")
     logging.debug(f"Job Sleep Time: {job_sleep_time} seconds")
     logging.debug(f"Job File Name: {job_file_name}")
     logging.debug(f"CPU API Endpoint: {cpu_api}")
