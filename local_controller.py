@@ -263,6 +263,22 @@ def save_cpu_max_pod():
 
 
 # endpoints
+
+@app.route("/pod-num", methods=["GET"])
+def get_nodes():
+    """return the current pod number
+    """
+    try:
+        res, _, msg = get_pod_num()
+        if res == None:
+            return jsonify({f"success": False, "msg": "{msg}", "pod-num": nodes_list})
+        else:
+            return jsonify({f"success": True, "msg": "", "pod-num": res})
+        
+    except Exception as e:
+        logging.error(f"Error in get_nodes: {e}")
+        return jsonify({f"success": False, "msg": "{e}", "pod-num": 0})
+
 @app.route("/job", methods=["POST"])
 def handle_post():
     """
