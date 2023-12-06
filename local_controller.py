@@ -23,9 +23,9 @@ read_jobs = False  # if read a job from a file and render the jobs
 
 
 # API
-cpu_api = "http://localhost:5001/cpu"
-pod_num_api = "http://localhost:5001/pod-num"  # GET
-create_pod_api = "http://localhost:5001/pod"  # POST
+cpu_api = "http://128.110.217.71:5001/cpu"
+pod_num_api = "http://128.110.217.71:5001/pod-num"  # GET
+create_pod_api = "http://128.110.217.71:5001/pod"  # POST
 
 # k values
 kp = -3.127
