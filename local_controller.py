@@ -147,8 +147,12 @@ def closed_loop(controller):
         if msg != None:
             # error getting the cpu
             logging.critical(f"error getting the CPU: {msg}")
-            logging.critical(f"using last CPU {CPU_data[-1]}")
-            cur_cpu = CPU_data[-1]
+            if len(CPU_data) != 0:
+                logging.critical(f"using last CPU {CPU_data[-1]}")
+                cur_cpu = CPU_data[-1]
+            else:
+                logging.critical(f"set CPU to be 0")
+                cur_cpu = 0
 
         logging.info(f"current CPU: {cur_cpu}")
         CPU_data.append(cur_cpu)
@@ -327,9 +331,7 @@ def handle_post():
     # Extract job description from the payload
     job_description = data.get("job")
 
-    logging.info(
-        f"getting new job from the endpoint, will be appended to the list: {job_description}"
-    )
+    logging.info(f"getting new job from the endpoint: {job_description}")
     cur_pod_num, _, msg = get_pod_num()
     if cur_pod_num >= max_pod:
         logging.info("cur_pod_num >= max_pod, can't assign new job")
