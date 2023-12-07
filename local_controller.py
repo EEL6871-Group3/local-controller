@@ -424,4 +424,4 @@ if __name__ == "__main__":
     save_res_thread.daemon = True
     save_res_thread.start()
 
-    app.run(port=5004)
+    app.run(port=5004, host="0.0.0.0")
