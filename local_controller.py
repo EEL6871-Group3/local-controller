@@ -44,6 +44,7 @@ max_pod = (
 )
 CPU_data = []
 max_pod_data = []
+controller_running = False
 
 
 class pi_controller:
@@ -131,10 +132,16 @@ def run_job(job_des):
 
 
 def closed_loop(controller):
-    global max_pod, reference_input, CPU_data, max_pod_data, sample_rate, last_pod_start_time, job_delay, last_pod_finish_time
+    global max_pod, reference_input, CPU_data, max_pod_data, sample_rate, last_pod_start_time, job_delay, last_pod_finish_time, controller_running
     logging.info("start close loop")
     pod_num = 0
     while True:
+        if not controller_running:
+            # if the controller is stopped, sleep and continue
+            logging.info("controller stopped, waiting")
+            time.sleep(sample_rate)
+            continue
+
         # get CPU usage
         cur_cpu, msg = get_cpu()
         if msg != None:
@@ -255,6 +262,11 @@ def save_list_to_file(list_data, file_name):
 
 def save_cpu_max_pod():
     while True:
+        if not controller_running:
+            # if the controller is stopped, sleep and continue
+            logging.info("controller stopped, waiting")
+            time.sleep(sample_rate)
+            continue
         if len(CPU_data) > 0:
             logging.info(f"saving CPU {CPU_data[-1]} and max_pod {max_pod_data[-1]}")
         save_list_to_file(CPU_data, cpu_res_file_name)
@@ -263,21 +275,44 @@ def save_cpu_max_pod():
 
 
 # endpoints
+@app.route("/start", methods=["GET"])
+def start_controller():
+    """start the controller"""
+    try:
+        global controller_running
+        controller_running = True
+        return jsonify({f"success": True, "msg": ""})
+    except Exception as e:
+        logging.error(f"Error starting the local controller: {e}")
+        return jsonify({f"success": False, "msg": "{e}"})
+
+
+@app.route("/stop", methods=["GET"])
+def stop_controller():
+    """stop the controller"""
+    try:
+        global controller_running
+        controller_running = False
+        return jsonify({f"success": True, "msg": ""})
+    except Exception as e:
+        logging.error(f"Error starting the local controller: {e}")
+        return jsonify({f"success": False, "msg": "{e}"})
+
 
 @app.route("/pod-num", methods=["GET"])
 def get_nodes():
-    """return the current pod number
-    """
+    """return the current pod number"""
     try:
         res, _, msg = get_pod_num()
         if res == None:
-            return jsonify({f"success": False, "msg": "{msg}", "pod-num": nodes_list})
+            return jsonify({f"success": False, "msg": "{msg}", "pod-num": 0})
         else:
             return jsonify({f"success": True, "msg": "", "pod-num": res})
-        
+
     except Exception as e:
         logging.error(f"Error in get_nodes: {e}")
         return jsonify({f"success": False, "msg": "{e}", "pod-num": 0})
+
 
 @app.route("/job", methods=["POST"])
 def handle_post():
