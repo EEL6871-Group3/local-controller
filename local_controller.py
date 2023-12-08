@@ -318,6 +318,16 @@ def get_nodes():
         return jsonify({f"success": False, "msg": "{e}", "pod-num": 0})
 
 
+@app.route("/maxpod", methods=["GET"])
+def get_maxpod():
+    """return the current maxpod number"""
+    try:
+        return jsonify({f"success": True, "msg": "", "maxpod": max_pod})
+    except Exception as e:
+        logging.error(f"Error in get_nodes: {e}")
+        return jsonify({f"success": False, "msg": "{e}", "pod-num": 0})
+
+
 @app.route("/job", methods=["POST"])
 def handle_post():
     """
